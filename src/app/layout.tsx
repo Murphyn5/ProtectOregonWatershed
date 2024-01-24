@@ -21,9 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body >
+      <body>
         <Providers>
-          <header >
+          <header>
             <Nav />
           </header>
           <main>{children}</main>
