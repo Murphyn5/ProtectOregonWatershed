@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Providers from './providers';
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 // when looking at next.js docs, we are using app routing instead of page routing
-// custom component styling? : https://nextui.org/docs/customization/custom-variants 
+// custom component styling? : https://nextui.org/docs/customization/custom-variants
 
 export default function RootLayout({
   children,
@@ -23,7 +24,7 @@ export default function RootLayout({
       <body >
         <Providers>
           <header >
-            <Nav/>
+            <Nav />
           </header>
           <main>{children}</main>
           <footer></footer>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@nextui-org/react';
 // import Test from '../components/test_component/test';
 
