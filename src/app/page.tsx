@@ -63,6 +63,9 @@ export default function Home() {
           <h5>[additional links]</h5>
         </div>
       </section>
+      <section>
+        <h6>[footer]</h6>
+      </section>
     </>
   );
 }
