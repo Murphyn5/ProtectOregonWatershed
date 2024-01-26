@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import mainBackground from "./image/main.jpg";
 
 const Main = () => {
+  const imageStyle = {
+    // backgroundImage: `url(${mainBackground})`
+    height: "48rem"
+  };
+
+
+
   return (
     <>
-      <section className="flex justify-center w-screen">
+      <section className="flex justify-center w-screen" style={imageStyle}>
+        <img src={"/main.jpg"} alt="main-image" className="w-screen" />
         <h1 className="p-5 text-7xl font-bold">[page subheading]</h1>
       </section>
       <section className="flex justify-evenly w-screen">
