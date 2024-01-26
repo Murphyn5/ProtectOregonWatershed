@@ -4,7 +4,7 @@ import { Button } from '@nextui-org/react';
 export default function About() {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>Protect Oregon Watershed's About, vision & mission page</h1>
+      <h1>Protect Oregon Watershed&apos;s About, vision &amp; mission page</h1>
       <div className="flex flex-wrap gap-4 items-center">
         <Button color="default">Default</Button>
         <Button color="primary">Primary</Button>

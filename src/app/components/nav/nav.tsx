@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Navbar,
   NavbarBrand,
@@ -13,7 +12,7 @@ export default function Nav() {
   return (
     <Navbar isBordered>
       <NavbarBrand>
-        <Link href="/" >
+        <Link href="/">
           <p className="font-bold text-inherit">Protect Oregon Watershed</p>
         </Link>
       </NavbarBrand>
