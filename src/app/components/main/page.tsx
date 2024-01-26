@@ -3,56 +3,56 @@ import React from 'react'
 const Main = () => {
   return (
     <>
-      <section id="main-image">
-        <h1>[page subheading]</h1>
+      <section className="flex justify-center w-screen">
+        <h1 className="p-5">[page subheading]</h1>
       </section>
-      <section id="calls-to-action">
-        <div className="call-splash">
+      <section className="flex justify-evenly w-screen">
+        <div className="flex auto">
           <h2 className="call-text">our missision</h2>
         </div>
-        <div className="call-splash">
+        <div className="flex auto">
           <h2 className="call-text">events</h2>
         </div>
-        <div className="call-splash">
+        <div className="flex auto">
           <h2 className="call-text">get involved</h2>
         </div>
       </section>
-      <section id="news">
+      <section className="flex justify-center w-screen">
         <h2 className="main-subheading">news</h2>
       </section>
-      <section id="read-more">
-        <div className="main-button">
-          <p className="main-button-text">read more</p>
-        </div>
+      <section className="flex justify-center w-screen">
+        <button>read more</button>
       </section>
-      <section id="news">
+      <section className="flex justify-center w-screen">
         <h2 className="main-subheading">[mission continued]</h2>
       </section>
-      <section id="news">
+      <section className="flex justify-center w-screen">
         <h2 className="main-subheading">upcoming events</h2>
       </section>
-      <section id="join">
-        <div id="join-splash">
+      <section className="flex w-screen">
+        <div className="flex flex-col items-center w-2/5">
           <h3>join us</h3>
-          <button className="main-button">[join button]</button>
+          <button>[join button]</button>
         </div>
-        <div className="join-image">
+        <div className="flex justify-center w-3/5">
           <h3>[join image]</h3>
         </div>
       </section>
-      <section id="main-info">
-        <div id="main-contacts">
+      <section className="flex w-screen">
+        <div className="flex items-center w-2/5">
           <h4>[site contacts]</h4>
         </div>
-        <div className="spray-notification">
-          <h5>[spray notification signup]</h5>
-          <form>
-            <input id="spray-notification-input" type="email" />
-            <button className="main-button">[email submit]</button>
-          </form>
-        </div>
-        <div className="additional">
-          <h5>[additional links]</h5>
+        <div className="flex items-center w-3/5">
+          <div className="flex flex-col w-3/5">
+            <h5>[spray notification signup]</h5>
+            <form className="flex flex-col items-start">
+              <input id="spray-notification-input" type="email" />
+              <button className="main-button">[email submit]</button>
+            </form>
+          </div>
+          <div className="additional">
+            <h5>[additional links]</h5>
+          </div>
         </div>
       </section>
       <section>
