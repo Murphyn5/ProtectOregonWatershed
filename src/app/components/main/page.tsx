@@ -1,4 +1,3 @@
-import React from "react";
 import mainBackground from "./image/main.jpg";
 
 const Main = () => {
