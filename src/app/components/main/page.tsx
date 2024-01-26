@@ -4,7 +4,7 @@ const Main = () => {
   return (
     <>
       <section className="flex justify-center w-screen">
-        <h1 className="p-5">[page subheading]</h1>
+        <h1 className="p-5 text-7xl font-bold">[page subheading]</h1>
       </section>
       <section className="flex justify-evenly w-screen">
         <div className="flex auto">
