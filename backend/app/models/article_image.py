@@ -17,6 +17,8 @@ class Article_Image(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
+    article = db.relationship("Article", back_populates = "article_images")
+
     def to_dict(self):
         return {
             'id': self.id,
