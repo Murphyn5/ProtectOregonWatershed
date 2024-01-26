@@ -1,9 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, Meeting
+from app.models import db, Meeting, Meeting_Image
 from datetime import datetime
 from app.forms.meetings_form import MeetingForm
+from app.forms.meeting_images_form import MeetingImageForm
 
 meeting_routes = Blueprint("meetings", __name__)
 
@@ -43,9 +44,18 @@ def get_meetings():
 
     for meeting in meetings:
         meeting_dict = meeting.to_dict()
+        images_length = len(meeting.meeting_images)
+        meeting_dict["images_length"] = images_length
+        meeting_dict["images"] = []
+        for image in meeting.meeting_images:
+            meeting_dict["images"].append(image.to_dict())
         meetings_to_return.append(meeting_dict)
 
-    return {"meetings": {meeting_dict["id"]: meeting_dict for meeting_dict in meetings_to_return}}
+    return {
+        "meetings": {
+            meeting_dict["id"]: meeting_dict for meeting_dict in meetings_to_return
+        }
+    }
 
 
 # UPDATE MEETING
@@ -91,3 +101,36 @@ def delete_meeting(id):
     db.session.delete(meeting)
     db.session.commit()
     return {"message": "Successfully deleted", "status_code": 200}
+
+
+# CREATE NEW IMAGE FOR A MEETING
+@meeting_routes.route("/<int:id>/images", methods=["POST"])
+@login_required
+def create_new_image(id):
+    meeting = Meeting.query.get(id)
+    if not meeting:
+        return {"errors": "Meeting couldn't be found", "status_code": 404}, 404
+
+    form = MeetingImageForm()
+
+    form["csrf_token"].data = request.cookies["csrf_token"]
+    data = form.data
+
+    if form.validate_on_submit():
+        new_meeting_image = Meeting_Image(
+            meeting_id=id,
+            url=data["url"],
+            caption=data["caption"],
+            updated_at=datetime.utcnow(),
+            created_at=datetime.utcnow(),
+        )
+        db.session.add(new_meeting_image)
+        db.session.commit()
+        new_meeting_image = new_meeting_image.to_dict()
+        return new_meeting_image
+    if form.errors:
+        return {
+            "message": "Validation error",
+            "statusCode": 400,
+            "errors": validation_errors_to_error_messages(form.errors),
+        }, 400

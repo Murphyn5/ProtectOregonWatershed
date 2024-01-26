@@ -18,6 +18,9 @@ class Meeting(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
+    meeting_images = db.relationship(
+        "Meeting_Image", cascade="all, delete", back_populates="meeting")
+
     def to_dict(self):
         return {
             'id': self.id,

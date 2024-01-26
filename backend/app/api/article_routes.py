@@ -105,7 +105,7 @@ def delete_article(id):
     return {"message": "Successfully deleted", "status_code": 200}
 
 
-# CREATE NEW IMAGE FOR AN ACTIVITY
+# CREATE NEW IMAGE FOR AN ARTICLE
 @article_routes.route("/<int:id>/images", methods=["POST"])
 @login_required
 def create_new_image(id):

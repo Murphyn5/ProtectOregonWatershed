@@ -17,6 +17,8 @@ class Documentary_Image(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
+    documentary = db.relationship("Documentary", back_populates = "documentary_images")
+
     def to_dict(self):
         return {
             "id": self.id,

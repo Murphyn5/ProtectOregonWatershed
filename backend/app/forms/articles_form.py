@@ -1,21 +1,15 @@
 from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
-    IntegerField,
-    DecimalField,
-    FloatField,
     DateTimeField,
-    TimeField,
 )
 from wtforms.validators import (
     DataRequired,
     Length,
-    NumberRange,
     URL,
-    Regexp,
     ValidationError,
 )
-from datetime import datetime, timedelta
+from datetime import datetime
 
 
 def date_check(form, field):
@@ -24,6 +18,7 @@ def date_check(form, field):
     dt = datetime.strptime(date_time, "%Y-%m-%d %H:%M:%S")
     if dt > datetime.utcnow():
         raise ValidationError("Date can't be set beyond present date.")
+
 
 class ArticleForm(FlaskForm):
     title = StringField("Title", validators=[DataRequired(), Length(min=2, max=200)])

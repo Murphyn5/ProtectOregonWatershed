@@ -17,6 +17,9 @@ class Meeting_Image(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     updated_at = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
+
+    meeting = db.relationship("Meeting", back_populates = "meeting_images")
+
     def to_dict(self):
         return {
             'id': self.id,

@@ -1,21 +1,15 @@
 from flask_wtf import FlaskForm
 from wtforms import (
     StringField,
-    IntegerField,
-    DecimalField,
-    FloatField,
     DateTimeField,
-    TimeField,
 )
 from wtforms.validators import (
     DataRequired,
     Length,
-    NumberRange,
     URL,
-    Regexp,
     ValidationError,
 )
-from datetime import datetime, timedelta
+from datetime import datetime
 
 
 def date_check(form, field):

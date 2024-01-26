@@ -17,6 +17,7 @@ class Community_Event_Image(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     updated_at = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
+    community_event = db.relationship("Community_Event", back_populates = "community_event_images")
 
     def to_dict(self):
         return {

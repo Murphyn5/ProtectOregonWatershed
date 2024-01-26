@@ -20,7 +20,7 @@ class Community_Event(db.Model, UserMixin):
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
     community_event_images = db.relationship(
-        "Article_Image", cascade="all, delete", back_populates="community_event")
+        "Community_Event_Image", cascade="all, delete", back_populates="community_event")
 
     def to_dict(self):
         return {
