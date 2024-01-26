@@ -17,11 +17,12 @@ def create_new_noap():
     data = request.get_json()
     if form.validate_on_submit():
         new_noap = Noap(
+            noap_id=data["noap_id"],
             operation_name=data["operation_name"],
             report_filed=data["report_filed"],
             fully_implemented_written_plan=data["fully_implemented_written_plan"],
-            available_to_spray_start=data["available_to_spray_start"],
-            available_to_spray_end=data["available_to_spray_end"],
+            start_date=data["start_date"],
+            end_date=data["end_date"],
             permit_link=data["permit_link"],
             ferns_link=data["ferns_link"],
             coordinates=data["coordinates"],
@@ -68,10 +69,11 @@ def update_noap(id):
     form = NoapForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
     if form.validate_on_submit():
+        noap.noap_id = (data["noap_id"],)
         noap.operation_name = (data["operation_name"],)
         noap.fully_implemented_written_plan = (data["fully_implemented_written_plan"],)
-        noap.available_to_spray_start = (data["available_to_spray_start"],)
-        noap.available_to_spray_end = (data["available_to_spray_end"],)
+        noap.start_date = (data["start_date"],)
+        noap.end_date = (data["end_date"],)
         noap.permit_link = (data["permit_link"],)
         noap.ferns_link = (data["ferns_link"],)
         noap.coordinates = (data["coordinates"],)

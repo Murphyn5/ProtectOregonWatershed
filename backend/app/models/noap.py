@@ -11,11 +11,12 @@ class Noap(db.Model, UserMixin):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+    noap_id = db.Column(db.String, nullable=False)
     operation_name = db.Column(db.String, nullable=False)
     report_filed = db.Column(db.DateTime, nullable=False)
     fully_implemented_written_plan = db.Column(db.DateTime)
-    available_to_spray_start = db.Column(db.DateTime)
-    available_to_spray_end = db.Column(db.DateTime)
+    start_date = db.Column(db.DateTime)
+    end_date = db.Column(db.DateTime)
     permit_link = db.Column(db.String, nullable=False)
     ferns_link = db.Column(db.String, nullable=False)
     coordinates = db.Column(db.String)
@@ -25,11 +26,12 @@ class Noap(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'noap_id': self.noap_id,
             'operation_name': self.operation_name,
             'report_filed': self.report_filed.isoformat() if self.report_filed else None,
             'fully_implemented_written_plan': self.fully_implemented_written_plan.isoformat() if self.fully_implemented_written_plan else None,
-            'available_to_spray_start': self.available_to_spray_start.isoformat() if self.available_to_spray_start else None,
-            'available_to_spray_end': self.available_to_spray_end.isoformat() if self.available_to_spray_end else None,
+            'start_date': self.start_date.isoformat() if self.start_date else None,
+            'end_date': self.end_date.isoformat() if self.end_date else None,
             'permit_link': self.permit_link,
             'ferns_link': self.ferns_link,
             'coordinates': self.coordinates,
