@@ -1,10 +1,8 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, User, Article, Article_Image, Noap
+from app.models import db, Noap
 from datetime import datetime
-from app.forms.articles_form import ArticleForm
-from app.forms.article_images_form import ArticleImageForm
 from app.forms.noaps_form import NoapForm
 
 noap_routes = Blueprint("noaps", __name__)
@@ -58,7 +56,7 @@ def get_noaps():
 # UPDATE NOAP
 @noap_routes.route("/<int:id>", methods=["PUT"])
 @login_required
-def update_noaps(id):
+def update_noap(id):
     noap = Noap.query.get(id)
     if not noap:
         return {
@@ -92,7 +90,7 @@ def update_noaps(id):
 # DELETE A NOAP
 @noap_routes.route("/<int:id>", methods=["DELETE"])
 @login_required
-def delete_noaps(id):
+def delete_noap(id):
     noap = Noap.query.get(id)
 
     if not noap:

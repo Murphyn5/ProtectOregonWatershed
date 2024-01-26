@@ -12,7 +12,7 @@ class Meeting(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
-    source = db.Column(db.String, nullable=False)
+    meeting_date = db.Column(db.DateTime, nullable=False)
     description = db.Column(db.String, nullable=False)
     link = db.Column(db.String, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())

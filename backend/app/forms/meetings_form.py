@@ -25,14 +25,13 @@ def date_check(form, field):
     if dt > datetime.utcnow():
         raise ValidationError("Date can't be set beyond present date.")
 
-class ArticleForm(FlaskForm):
-    title = StringField("Title", validators=[DataRequired(), Length(min=2, max=200)])
-    source = StringField("Source", validators=[DataRequired(), Length(min=2, max=200)])
-    date_posted = DateTimeField(
-        "Date Posted",
+
+class MeetingForm(FlaskForm):
+    title = StringField("Title", validators=[DataRequired(), Length(min=1, max=255)])
+    meeting_date = DateTimeField(
+        "Meeting Date",
         format="%Y-%m-%d %H:%M:%S",
         validators=[date_check, DataRequired()],
     )
-    link = StringField(
-        "Link", validators=[DataRequired(), URL(), Length(min=5, max=200)]
-    )
+    description = StringField("Description", validators=[DataRequired()])
+    link = StringField("Link", validators=[DataRequired(), URL(), Length(max=255)])
