@@ -3,11 +3,11 @@ from app.models import db, Article_Image, Article
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_required
 
-image_routes = Blueprint('image', __name__)
+article_image_routes = Blueprint('article_images', __name__)
 
 
 # DELETE AN IMAGE
-@image_routes.route('/<int:id>', methods=['DELETE'])
+@article_image_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def images_delete(id):
     image = Article_Image.query.get(id)
@@ -25,7 +25,7 @@ def images_delete(id):
     }
 
 # GET IMAGE BY CURRENT ID
-@image_routes.route('/<int:id>')
+@article_image_routes.route('/<int:id>')
 def get_image_details(id):
     image = Article_Image.query.get(id).to_dict()
     if not image:

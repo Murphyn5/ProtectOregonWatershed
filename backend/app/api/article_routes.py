@@ -16,13 +16,13 @@ def create_new_article():
     form = ArticleForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
     data = request.get_json()
-    dt = datetime.strptime(data["date_time"], "%Y-%m-%d %H:%M:%S")
+    # dt = datetime.strptime(data["date_time"], "%Y-%m-%d %H:%M:%S")
     if form.validate_on_submit():
         new_article = Article(
             title=data["title"],
             source=data["source"],
             link=data["link"],
-            date_posted=dt,
+            date_posted=data["date_posted"],
             updated_at=datetime.utcnow(),
             created_at=datetime.utcnow(),
         )
@@ -71,15 +71,15 @@ def update_article(id):
             "status_code": 404,
         }, 404
     data = request.get_json()
-    dt = datetime.strptime(data["date_time"], "%Y-%m-%d %H:%M:%S")
+    # dt = datetime.strptime(data["date_time"], "%Y-%m-%d %H:%M:%S")
     form = ArticleForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
     if form.validate_on_submit():
-        article.title = (data["title"],)
-        article.source = (data["source"],)
-        article.link = (data["link"],)
-        article.date_posted = (dt,)
-        article.updated_at = (datetime.utcnow(),)
+        article.title = data["title"]
+        article.source = data["source"]
+        article.link = data["link"]
+        article.date_posted = data["date_posted"]
+        article.updated_at = datetime.utcnow()
         db.session.commit()
         article_dict = article.to_dict()
         return article_dict, 200
