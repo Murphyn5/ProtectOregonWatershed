@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, User, Documentary, Documentary_Image
+from app.models import db, User, Documentary, DocumentaryImage
 from datetime import datetime
 from app.forms.documentaries_form import DocumentaryForm
 from app.forms.documentary_images_form import DocumentaryImageForm
@@ -119,7 +119,7 @@ def create_new_image(id):
     data = form.data
 
     if form.validate_on_submit():
-        new_documentary_image = Documentary_Image(
+        new_documentary_image = DocumentaryImage(
             documentary_id=id,
             url=data["url"],
             caption=data["caption"],

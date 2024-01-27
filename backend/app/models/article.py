@@ -19,7 +19,7 @@ class Article(db.Model, UserMixin):
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
 
     article_images = db.relationship(
-        "Article_Image", cascade="all, delete", back_populates="article")
+        "ArticleImage", cascade="all, delete", back_populates="article")
 
     def to_dict(self):
         return {

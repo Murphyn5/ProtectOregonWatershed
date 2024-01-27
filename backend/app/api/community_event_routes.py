@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, User, Community_Event, Community_Event_Image
+from app.models import db, User, CommunityEvent, CommunityEventImage
 from datetime import datetime
 from app.forms.community_events_form import CommunityEventForm
 from app.forms.community_event_images_form import CommunityEventImageForm
@@ -18,12 +18,14 @@ def create_community_event():
     data = request.get_json()
     # dt = datetime.strptime(data["date_time"], "%Y-%m-%d %H:%M:%S")
     if form.validate_on_submit():
-        community_event = Community_Event(
+        community_event = CommunityEvent(
             title=data["title"],
+            days=data["days"],
             dates=data["dates"],
             times=data["times"],
             location=data["location"],
             description=data["description"],
+            link=data["link"],
             updated_at=datetime.utcnow(),
             created_at=datetime.utcnow(),
         )
@@ -42,7 +44,7 @@ def create_community_event():
 # GET ALL COMMUNITY EVENTS
 @community_event_routes.route("/")
 def get_community_events():
-    community_events = Community_Event.query.all()
+    community_events = CommunityEvent.query.all()
     community_events_to_return = []
 
     for community_event in community_events:
@@ -65,10 +67,10 @@ def get_community_events():
 @community_event_routes.route("/<int:id>", methods=["PUT"])
 @login_required
 def update_community_event(id):
-    community_event = Community_Event.query.get(id)
+    community_event = CommunityEvent.query.get(id)
     if not community_event:
         return {
-            "errors": ["error: Community_Event couldn't be found"],
+            "errors": ["error: CommunityEvent couldn't be found"],
             "status_code": 404,
         }, 404
     data = request.get_json()
@@ -77,10 +79,12 @@ def update_community_event(id):
     form["csrf_token"].data = request.cookies["csrf_token"]
     if form.validate_on_submit():
         community_event.title = data["title"]
+        community_event.days = data["days"]
         community_event.dates = data["dates"]
         community_event.times = data["times"]
         community_event.location = data["location"]
         community_event.description = data["description"]
+        community_event.link = data["link"]
         community_event.updated_at = datetime.utcnow()
         db.session.commit()
         community_event_dict = community_event.to_dict()
@@ -97,7 +101,7 @@ def update_community_event(id):
 @community_event_routes.route("/<int:id>", methods=["DELETE"])
 @login_required
 def delete_community_event(id):
-    community_event = Community_Event.query.get(id)
+    community_event = CommunityEvent.query.get(id)
 
     if not community_event:
         return {"errors": "error: Community Event couldn't be found", "status_code": 404}, 404
@@ -111,7 +115,7 @@ def delete_community_event(id):
 @community_event_routes.route("/<int:id>/images", methods=["POST"])
 @login_required
 def create_new_image(id):
-    community_event = Community_Event.query.get(id)
+    community_event = CommunityEvent.query.get(id)
     if not community_event:
         return {"errors": "Community Event couldn't be found", "status_code": 404}, 404
 
@@ -121,7 +125,7 @@ def create_new_image(id):
     data = form.data
 
     if form.validate_on_submit():
-        community_event_image = Community_Event_Image(
+        community_event_image = CommunityEventImage(
             community_event_id=id,
             url=data["url"],
             caption=data["caption"],
