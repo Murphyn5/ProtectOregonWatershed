@@ -8,7 +8,7 @@ def seed_community_events():
         title="PUBLIC PROTEST",
         days="Saturdays",
         dates="",
-        times="11:00 AM",
+        times="11:00 AM to 1:00 PM",
         location="WALDPORT Hwy 101 and 34",
         description="Our chance to make some noise and build community support!",
         link="",
