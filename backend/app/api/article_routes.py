@@ -8,7 +8,6 @@ from app.forms.article_images_form import ArticleImageForm
 
 article_routes = Blueprint("articles", __name__)
 
-
 # CREATE NEW ARTICLE
 @article_routes.route("/", methods=["POST"])
 @login_required
