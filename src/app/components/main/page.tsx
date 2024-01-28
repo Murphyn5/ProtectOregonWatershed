@@ -10,13 +10,14 @@ const Main = () => {
 
   return (
     <>
-      <section className="flex justify-center w-screen" style={imageStyle}>
-        <img src={"/main.jpg"} alt="main-image" className="w-screen" />
-        <h1 className="p-5 text-7xl font-bold">[page subheading]</h1>
+      <section className="relative flex justify-center w-screen" style={imageStyle}>
+        <img src={"/main.jpg"} alt="main-image" className="w-screen object-cover" />
+        <h1 className="absolute p-5 text-7xl font-bold bottom-20 left-1/2 transform -translate-x-1/2 w-full flex justify-center"
+        >[page subheading]</h1>
       </section>
       <section className="flex justify-evenly w-screen">
         <div className="flex auto">
-          <h2 className="call-text">our missision</h2>
+          <h2 className="call-text">our mission</h2>
         </div>
         <div className="flex auto">
           <h2 className="call-text">events</h2>
