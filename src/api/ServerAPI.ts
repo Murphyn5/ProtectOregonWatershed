@@ -22,7 +22,6 @@ async function makeRequest(
     ...(payload && {
       headers: {
         'Content-Type': 'application/json',
-        'XSRF-token': Cookies.get('XSRF-TOKEN'),
       },
       body: JSON.stringify(payload),
     }),

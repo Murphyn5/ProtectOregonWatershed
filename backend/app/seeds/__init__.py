@@ -1,7 +1,6 @@
 from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .noaps import seed_noaps, undo_noaps
-from .community_events import seed_community_events, undo_community_events
 from .articles import seed_articles, undo_articles
 from .article_images import seed_article_images, undo_article_images
 from .meetings import seed_meetings, undo_meetings

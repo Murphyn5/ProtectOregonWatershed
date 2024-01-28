@@ -23,7 +23,7 @@ const LoginForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // console.log('Form Data Submitted', formData);
+    console.log('Form Data Submitted', formData);
     makeRequest('/api/auth/login', 'POST', formData).then((response: any) => {
       console.log('response:', response);
     });
