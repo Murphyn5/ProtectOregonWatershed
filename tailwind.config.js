@@ -29,6 +29,9 @@ module.exports = {
             'aquamarine': '#9FFFCB',
             'darkText': '#333333'
           }, // light theme colors
+          backgroundImage: {
+            'main': "url('/main.jpg')"
+          },
         },
         dark: {
           layout: {}, // dark theme layout tokens
