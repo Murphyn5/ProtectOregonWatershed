@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "npm install",
-    "build:backend": "cd backend && pip install -r requirements.txt && flask db upgrade && flask seed all"
+    "build:backend": "cd backend && pip install -r requirements.txt"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
