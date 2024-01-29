@@ -1,7 +1,7 @@
 import { Button } from '@nextui-org/react';
 // import Test from '../components/test_component/test';
 
-export default function About() {
+export default function Action() {
   return (
     <div style={{ padding: '20px' }}>
       <h1>Call to action page</h1>

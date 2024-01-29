@@ -15,6 +15,7 @@ interface RequestResponse {
 async function makeRequest(
   url: string,
   method: string,
+  csrf: string,
   payload?: any
 ): Promise<RequestResponse> {
   const requestOptions = {
@@ -22,6 +23,7 @@ async function makeRequest(
     ...(payload && {
       headers: {
         'Content-Type': 'application/json',
+        'CSRF-Token': csrf,
       },
       body: JSON.stringify(payload),
     }),
