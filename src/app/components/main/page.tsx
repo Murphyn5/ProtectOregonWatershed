@@ -4,17 +4,17 @@ const Main = () => {
   //   height: "48rem"
   // };
 
-  const defaultSection = "flex justify-center w-screen"
+  const defaultSection = "flex justify-center w-full"
   const subHeading = "text-darkText text-7xl font-semibold m-0 p-0 mb-5";
   const whiteParagraph = "text-white text-xl"
-  const callText = "text-white text-5xl font-bold my-8 p-0";
-  const callSplash = "flex auto w-full justify-center box-border"
+  const callText = "text-white text-5xl font-bold my-8 px-5 text-nowrap";
+  const callSplash = "flex w-full justify-center"
   const readMore = "bg-midnightGreen px-5 py-2 mb-5"
 
   return (
     <>
 
-      <section className="relative w-screen h-96 m-0 p-0 flex items-center">
+      <section className="relative w-full h-96 m-0 p-0 flex items-center">
         <img
           src="/main.jpg"
           alt="main image"
@@ -25,7 +25,7 @@ const Main = () => {
         </h1>
       </section>
 
-      <section className="flex justify-evenly w-screen">
+      <section className="flex w-full">
         <div className={`${callSplash} bg-midnightGreen`}>
           <h2 className={callText}>our mission</h2>
         </div>
@@ -37,7 +37,7 @@ const Main = () => {
         </div>
       </section>
 
-      <section className={`${defaultSection} bg-white`}>
+      <section className={`${defaultSection} bg-white min-w-full overflow-x-auto`}>
         <h2 className={`${subHeading}`}>news</h2>
       </section>
       <section className={`${defaultSection} bg-white`}>
@@ -52,7 +52,7 @@ const Main = () => {
         <h2 className={`${subHeading}`}>upcoming events</h2>
       </section>
 
-      <section className="flex w-screen bg-white">
+      <section className="flex w-full bg-white">
         <div className="flex flex-col items-center w-2/5 bg-persianGreen">
           <h3>join us</h3>
           <button>[join button]</button>
@@ -62,7 +62,7 @@ const Main = () => {
         </div>
       </section>
 
-      <section className="flex w-screen">
+      <section className="flex w-full">
         <div className="flex items-center w-2/5">
           <h4>[site contacts]</h4>
         </div>
