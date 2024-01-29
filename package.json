@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run build:frontend && npm run build:backend",
-    "build:frontend": "npm install",
+    "build:frontend": "npm install && npm run dev",
     "build:backend": "cd backend && pip install -r requirements.txt"
   },
   "dependencies": {
