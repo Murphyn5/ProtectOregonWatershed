@@ -13,6 +13,7 @@ const Main = () => {
 
   return (
     <>
+
       <section className="relative w-screen h-96 m-0 p-0 flex items-center">
         <img
           src="/main.jpg"
@@ -23,6 +24,7 @@ const Main = () => {
           [page subheading]
         </h1>
       </section>
+
       <section className="flex justify-evenly w-screen">
         <div className={`${callSplash} bg-midnightGreen`}>
           <h2 className={callText}>our mission</h2>
@@ -34,20 +36,24 @@ const Main = () => {
           <h2 className={callText}>get involved</h2>
         </div>
       </section>
+
       <section className={`${defaultSection} bg-white`}>
         <h2 className={`${subHeading}`}>news</h2>
       </section>
       <section className={`${defaultSection} bg-white`}>
         <button className={`${readMore} ${whiteParagraph}`}>read more</button>
       </section>
+
       <section className={`${defaultSection} bg-persianGreen py-16`}>
         <h2 className="text-white text-5xl italic">[mission continued]</h2>
       </section>
+
       <section className={`${defaultSection} bg-white py-5`}>
         <h2 className={`${subHeading}`}>upcoming events</h2>
       </section>
-      <section className="flex w-screen">
-        <div className="flex flex-col items-center w-2/5">
+
+      <section className="flex w-screen bg-white">
+        <div className="flex flex-col items-center w-2/5 bg-persianGreen">
           <h3>join us</h3>
           <button>[join button]</button>
         </div>
@@ -55,6 +61,7 @@ const Main = () => {
           <h3>[join image]</h3>
         </div>
       </section>
+
       <section className="flex w-screen">
         <div className="flex items-center w-2/5">
           <h4>[site contacts]</h4>
@@ -72,9 +79,11 @@ const Main = () => {
           </div>
         </div>
       </section>
+
       <section>
         <h6>[footer]</h6>
       </section>
+
     </>
   )
 }
