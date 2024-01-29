@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm install",
+    "build:backend": "cd backend && pipenv install -r requirements.txt && pipenv run flask db init && pipenv run flask db migrate && pipenv run flask db upgrade && pipenv run flask seed all"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
