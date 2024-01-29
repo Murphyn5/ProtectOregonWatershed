@@ -60,7 +60,7 @@ def get_articles():
     }
 
 
-# UPDATE ACTIVITY
+# UPDATE ARTICLE
 @article_routes.route("/<int:id>", methods=["PUT"])
 @login_required
 def update_article(id):
