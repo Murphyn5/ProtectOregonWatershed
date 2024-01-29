@@ -48,3 +48,4 @@ __pycache__/
 .vscode/
 Pipfile
 Pipfile.lock
+/migrations
