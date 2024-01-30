@@ -24,18 +24,21 @@ const Events: React.FC = () => {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/community_events')
-      .then((res) => res.json())
-      .then((res) => {
-        setEvents(Object.values(res));
-        setLoading(false);
-        console.log('res:', res);
-      });
-    // makeRequest('GET', '/api/community_events')
+    // fetch('/api/community_events')
+    //   .then((res) => res.json())
     //   .then((res) => {
     //     setEvents(Object.values(res));
     //     setLoading(false);
+    //     console.log('res:', res);
     //   });
+    // // makeRequest('GET', '/api/community_events')
+    // //   .then((res) => {
+    // //     setEvents(Object.values(res));
+    // //     setLoading(false);
+    // //   });
+    console.log(EventsList)
+    setEvents(EventsList)
+    setLoading(false)
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
@@ -59,7 +62,7 @@ const Events: React.FC = () => {
         </p>
       </div>
 
-      {Object.values(events[0]).map((event: Event) => (
+      {Object.values(events).map((event: Event) => (
         <Calender_event key={event.id} event={event} />
       ))}
     </div>
