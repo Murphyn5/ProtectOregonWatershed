@@ -42,7 +42,7 @@ const Articles: React.FC = () => {
   //*** use when connected to database ***
   // const [news, setNews] = useState<News[]>([]);
   // const [isLoading, setLoading] = useState(true);
-  
+
   //   useEffect(() => {
   //     fetch('/api/articles')
   //       .then((res) => res.json())
@@ -51,7 +51,7 @@ const Articles: React.FC = () => {
   //         setLoading(false);
   //       });
   //   }, []);
-  
+
   //   if (isLoading) return <p>Loading...</p>;
   //   if (!news) return <p>No profile data</p>;
   //   console.log("news:", news)
@@ -81,7 +81,7 @@ const Articles: React.FC = () => {
           />
       </div>
 
-        <div className="grid grid-cols-3 gap-1 md:grid-cols-3 w-full items-center">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-3 w-full items-center">
           {Object.values(news).map((n: News) => (
             <News_card key={n.id} n={n} />
           ))}
@@ -124,5 +124,5 @@ const Articles: React.FC = () => {
       </div>
     );
   };
-  
+
   export default Articles;
