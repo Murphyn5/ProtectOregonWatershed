@@ -28,6 +28,11 @@ export default function Nav() {
             action
           </Link>
         </NavbarItem>
+        <NavbarItem isActive>
+          <Link color="secondary" href="events" aria-current="page">
+            events
+          </Link>
+        </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
             link 3
