@@ -20,30 +20,30 @@ const Events: React.FC = () => {
     image: string;
     // Add other properties as needed
   }
-  // const [events, setEvents] = useState<Event[]>([]);
-  // const [isLoading, setLoading] = useState(true);
+  const [events, setEvents] = useState<Event[]>([]);
+  const [isLoading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch('/api/community_events')
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       setEvents(Object.values(res));
-  //       setLoading(false);
-  //       console.log('res:', res);
-  //     });
-  //   // makeRequest('GET', '/api/community_events')
-  //   //   .then((res) => {
-  //   //     setEvents(Object.values(res));
-  //   //     setLoading(false);
-  //   //   });
-  // }, []);
+  useEffect(() => {
+    fetch('/api/community_events')
+      .then((res) => res.json())
+      .then((res) => {
+        setEvents(Object.values(res));
+        setLoading(false);
+        console.log('res:', res);
+      });
+    // makeRequest('GET', '/api/community_events')
+    //   .then((res) => {
+    //     setEvents(Object.values(res));
+    //     setLoading(false);
+    //   });
+  }, []);
 
-  // if (isLoading) return <p>Loading...</p>;
-  // if (!events) return <p>No profile data</p>;
+  if (isLoading) return <p>Loading...</p>;
+  if (!events) return <p>No profile data</p>;
   // console.log('events:', events);
   // console.log('events:', Object.values(events[0])[1]);
   // console.log('imgs:', Object.values(events[0])[1]['images'][0]);
-  const events = EventsList;
+
 
   return (
     <div
