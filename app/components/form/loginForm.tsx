@@ -1,7 +1,7 @@
 'use client';
 import Cookies from 'js-cookie'
 import React, { useState, useEffect } from 'react';
-import makeRequest from '@/app/ServerAPI';
+import makeRequest from '../../ServerAPI';
 interface LoginFormData {
   email: string;
   password: string;
