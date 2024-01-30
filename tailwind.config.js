@@ -35,7 +35,14 @@ module.exports = {
         },
         dark: {
           layout: {}, // dark theme layout tokens
-          colors: {}, // dark theme colors
+          colors: {
+            'midnightGreen': '#7AE582',
+            'pacificCyan': '#00A5CF',
+            'persianGreen': '#25A18E',
+            'lightGreen': '#004E64',
+            'aquamarine': '#9FFFCB',
+            'darkText': '#333333'
+          }, // dark theme colors
         },
         modern: {
           extend: 'dark', // <- inherit default values from dark theme
