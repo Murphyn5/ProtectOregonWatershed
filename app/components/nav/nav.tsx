@@ -42,15 +42,10 @@ export default function Nav() {
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform"
-            color="primary"
-            as={Link}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Join
-          </Button>
+          <Link className='bg-midnightGreen shadow-md py-2 px-5 text-white' href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform" rel="noopener noreferrer"
+            target="_blank">
+              Join
+          </Link>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenuToggle
