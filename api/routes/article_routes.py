@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from models import db, User, Article, ArticleImage
+from api.models import db, User, Article, ArticleImage
 from datetime import datetime
-from forms.articles_form import ArticleForm
-from forms.article_images_form import ArticleImageForm
+from api.forms.articles_form import ArticleForm
+from api.forms.article_images_form import ArticleImageForm
 
 article_routes = Blueprint("articles", __name__)
 

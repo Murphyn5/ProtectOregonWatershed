@@ -1,5 +1,5 @@
 from datetime import datetime
-from models import db, environment, SCHEMA, Article
+from api.models import db, environment, SCHEMA, Article
 from sqlalchemy.sql import text
 
 def seed_articles():

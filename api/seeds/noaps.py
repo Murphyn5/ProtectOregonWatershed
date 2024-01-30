@@ -1,5 +1,5 @@
 from datetime import datetime
-from models import db, environment, SCHEMA, Noap
+from api.models import db, environment, SCHEMA, Noap
 from sqlalchemy.sql import text
 
 def seed_noaps():

@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from models import db, User, CommunityEvent, CommunityEventImage
+from api.models import db, User, CommunityEvent, CommunityEventImage
 from datetime import datetime
-from forms.community_events_form import CommunityEventForm
-from forms.community_event_images_form import CommunityEventImageForm
+from api.forms.community_events_form import CommunityEventForm
+from api.forms.community_event_images_form import CommunityEventImageForm
 
 community_event_routes = Blueprint("community_events", __name__)
 
