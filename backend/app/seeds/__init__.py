@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .noaps import seed_noaps, undo_noaps
 from .community_events import seed_community_events, undo_community_events
+from .articles import seed_articles, undo_articles
+from .documentaries import seed_documentaries, undo_documentaries
 
 from app.models.db import db, environment, SCHEMA
 
@@ -20,10 +22,14 @@ def seed():
         # Make sure to add all your other model's undo functions below
         undo_users()
         undo_noaps()
-        undo_community_events()
+        undo_community_events()()
+        undo_articles()
+        undo_documentaries()
     seed_users()
     seed_noaps()
     seed_community_events()
+    seed_articles()
+    seed_documentaries()
     # Add other seed functions here
 
 
