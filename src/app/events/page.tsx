@@ -38,7 +38,7 @@ export default function About() {
                     </div>
                 </CardBody>
             </Card>
-
+{/* 
             <Card className="py-4 lg:w-1/2 x1:w-1/2 border hover:border-blue-400">
                 <CardBody className="overflow-visible py-2 flex-row gap-2">
                     <div className='w-1/4'>
@@ -100,10 +100,7 @@ managers, and funding partners. In-person and virtual options available.
                         </p>
                     </div>
                 </CardBody>
-            </Card>
-            {/* <div className="flex flex-wrap gap-4 items-center">
-        <Button color="default" >Default</Button>
-      </div> */}
+            </Card> */}
         </div>
     );
 }
