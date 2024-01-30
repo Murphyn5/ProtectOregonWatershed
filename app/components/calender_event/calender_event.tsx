@@ -60,7 +60,7 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
               </h2>
             </div>
             <div className="w-1/2 flex flex-col gap-3">
-              <h1 className="text-3xl text-red-500 font-extrabold">
+              <h1 className="text-3xl text-gray-500 font-extrabold">
                 {event.title}
               </h1>
               <h3 className="text-base text-default-500">
