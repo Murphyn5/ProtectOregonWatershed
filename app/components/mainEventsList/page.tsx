@@ -15,7 +15,7 @@ const MainEventsList: React.FC = () => {
     title: string;
     description: string;
     link: string;
-    images: Array<string>;
+    image: string;
     // Add other properties as needed
   }
   const [events, setEvents] = useState<Event[]>([]);
