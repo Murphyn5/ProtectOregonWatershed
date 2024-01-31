@@ -7,6 +7,14 @@ from flask_login import LoginManager
 from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
+from .api.article_routes import article_routes
+from .api.article_image_routes import article_image_routes
+from .api.community_event_routes import community_event_routes
+from .api.documentary_image_routes import documentary_image_routes
+from .api.documentary_routes import documentary_routes
+from .api.meeting_routes import meeting_routes
+from .api.meeting_image_routes import meeting_image_routes
+from .api.noap_routes import noap_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -29,6 +37,14 @@ app.cli.add_command(seed_commands)
 app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
+app.register_blueprint(article_routes, url_prefix='/api/articles')
+app.register_blueprint(article_image_routes, url_prefix='/api/article_images')
+app.register_blueprint(community_event_routes, url_prefix='/api/community_events')
+app.register_blueprint(documentary_image_routes, url_prefix='/api/documentary_images')
+app.register_blueprint(documentary_routes, url_prefix='/api/documentaries')
+app.register_blueprint(meeting_routes, url_prefix='/api/meetings')
+app.register_blueprint(meeting_image_routes, url_prefix='/api/meeting_images')
+app.register_blueprint(noap_routes, url_prefix='/api/noaps')
 db.init_app(app)
 Migrate(app, db)
 
