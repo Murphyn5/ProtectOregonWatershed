@@ -1,7 +1,21 @@
+'use client';
 import { Input, Textarea, Button, Spacer } from '@nextui-org/react';
+import { useState, useEffect } from 'react';
 // import { Input, TimePicker } from '@nextui-org/react';
+import makeRequest from '../../../api/ServerAPI';
 
 export default function EventForm() {
+  const [Data, setData] = useState(null);
+  const [Error, setError] = useState('no error');
+
+  useEffect(() => {
+    makeRequest('/posts', 'GET').then((response: any) => {
+      console.log('response:', response);
+      setData(response.data);
+      setError(response.error);
+    });
+  }, []);
+
   return (
     <div style={{ padding: '20px' }}>
       <div
