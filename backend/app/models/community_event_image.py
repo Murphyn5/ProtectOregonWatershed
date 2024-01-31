@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from datetime import datetime
 
 
-class Community_Event_Image(db.Model, UserMixin):
+class CommunityEventImage(db.Model, UserMixin):
     __tablename__ = "community_event_images"
 
     if environment == "production":
@@ -17,7 +17,7 @@ class Community_Event_Image(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     updated_at = db.Column(db.DateTime, default=db.func.current_timestamp(), onupdate=db.func.current_timestamp())
 
-    community_event = db.relationship("Community_Event", back_populates = "community_event_images")
+    community_event = db.relationship("CommunityEvent", back_populates = "community_event_images")
 
     def to_dict(self):
         return {

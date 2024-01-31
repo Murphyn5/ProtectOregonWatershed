@@ -4,7 +4,7 @@ from flask_login import UserMixin
 from datetime import datetime
 
 
-class Meeting_Image(db.Model, UserMixin):
+class MeetingImage(db.Model, UserMixin):
     __tablename__ = "meeting_images"
 
     if environment == "production":
