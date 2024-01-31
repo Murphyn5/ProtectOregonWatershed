@@ -11,6 +11,7 @@ from .seeds import seed_commands
 from .config import Config
 
 app = Flask(__name__, static_folder='../react-vite/dist', static_url_path='/')
+app.config['UPLOAD_FOLDER'] = 'static'
 
 # Setup login manager
 login = LoginManager(app)

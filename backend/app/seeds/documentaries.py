@@ -58,7 +58,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary6 = Documentary(
+    documentary7 = Documentary(
         title="Hot Spot for Birth Defects: Excerpt 2",
         source="Renee Stringham, MD",
         description="Lincoln County stories of medical practices & politics, research & activism",
@@ -67,7 +67,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary7 = Documentary(
+    documentary8 = Documentary(
         title="Citizens for a Healthy County: Harvard Economist talks Forest",
         source="Ernie Niemi, Economist ",
         description="Economic Picture of Forestry in Lincoln County",
@@ -76,7 +76,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary8 = Documentary(
+    documentary9 = Documentary(
         title="Regulatory Whiplash: Federalist Society",
         source="Will Trackman & Adam White",
         description="Transferring power from one political party to the next",
@@ -85,7 +85,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary9 = Documentary(
+    documentary10 = Documentary(
         title="Water- Earth’s Blood: The old and new water Paradigm",
         source="Zachary Weiss",
         description="Restoring our Planet’s Health",
@@ -94,7 +94,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary10 = Documentary(
+    documentary11 = Documentary(
         title="The People vs Agent Orange: Summary",
         source="Citizen Representatives from Oregon Coast",
         description="Direct experience regarding aerial sprayings",
@@ -103,7 +103,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary11 = Documentary(
+    documentary12 = Documentary(
         title="The People vs Agent Orange: Panel Discussion",
         source="Citizen Representatives from Oregon Coast",
         description="Direct experience regarding aerial sprayings",
@@ -112,7 +112,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary12 = Documentary(
+    documentary13 = Documentary(
         title="DRIFT: A Community Seeking Justice",
         source="Beyond Toxics",
         description="A story about Gold Beach, OR residents",
@@ -121,8 +121,8 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary13 = Documentary(
-        title="Rejuvinating A Forest with Goats",
+    documentary14 = Documentary(
+        title="Regenerating A Forest with Goats",
         source="Happen Films",
         description="An environmentally safe alternative to herbicides",
         link="https://www.youtube.com/watch?v=g9yiclBCxMo&t=1s",
@@ -130,7 +130,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary14 = Documentary(
+    documentary15 = Documentary(
         title="Toxics on Trial: Legal Legacies in Pesticide Reform",
         source="Northwest Center for Alternatives to Pesticides",
         description="Full trial on chemical exposure to pesticides and herbicides and their effects on ecosystems",
@@ -139,7 +139,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary15 = Documentary(
+    documentary16 = Documentary(
         title="Behind the Emerald Curtain",
         source="Pacific Rivers TV",
         description="Asking for a balance in Forest Management",
@@ -148,7 +148,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary16 = Documentary(
+    documentary17 = Documentary(
         title="How Beavers Engineer the Land",
         source="George Monbiot",
         description="Beavers are essential to water and land management",
@@ -157,7 +157,7 @@ def seed_documentaries():
         updated_at=datetime.utcnow(),
     )
 
-    documentary17 = Documentary(
+    documentary18 = Documentary(
         title="Putting Forest First ",
         source="Peter Hayes, Hyla woods President",
         description="Forest are managed to support clean water and air.",
@@ -186,6 +186,7 @@ def seed_documentaries():
             documentary15,
             documentary16,
             documentary17,
+            documentary18
         ]
     )
 
