@@ -36,6 +36,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# pip
+backend/Pipfile
+backend/Pipfile.lock
 
 .env
 __pycache__/
