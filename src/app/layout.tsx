@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Providers from './providers';
 import { ThemeSwitcher } from './components/themeSwitcher/themeSwitcher';
 import Nav from './components/nav/nav';
+import Footer from './components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'Protect Oregon Watersheds',
@@ -22,11 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>
-          <header>
-            <Nav />
-          </header>
-          <main>{children}</main>
-          <footer></footer>
+          <Nav />
+          <main className="">{children}</main>
+          <Footer />
         </Providers>
       </body>
     </html>
