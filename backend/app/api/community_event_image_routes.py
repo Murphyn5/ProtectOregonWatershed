@@ -1,19 +1,18 @@
 from flask import Blueprint, jsonify, request
-from app.models import db, ArticleImage
+from app.models import db, CommunityEventImage
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_required
 
-article_image_routes = Blueprint('article_images', __name__)
-
+community_event_image_routes = Blueprint('community_event_images', __name__)
 
 # DELETE AN IMAGE
-@article_image_routes.route('/<int:id>', methods=['DELETE'])
+@community_event_image_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def images_delete(id):
-    image = ArticleImage.query.get(id)
+    image = CommunityEventImage.query.get(id)
     if not image:
         return {
-            "errors": "Article Image couldn't be found",
+            "errors": "Community Event Image couldn't be found",
             "status_code": 404
         }, 404
 
@@ -25,9 +24,9 @@ def images_delete(id):
     }
 
 # GET IMAGE BY CURRENT ID
-@article_image_routes.route('/<int:id>')
+@community_event_image_routes.route('/<int:id>')
 def get_image_details(id):
-    image = ArticleImage.query.get(id).to_dict()
+    image = CommunityEventImage.query.get(id).to_dict()
     if not image:
         return {
             "errors": "Image couldn't be found",

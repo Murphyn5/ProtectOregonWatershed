@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, Meeting, Meeting_Image
+from app.models import db, Meeting, MeetingImage
 from datetime import datetime
 from app.forms.meetings_form import MeetingForm
 from app.forms.meeting_images_form import MeetingImageForm
@@ -117,7 +117,7 @@ def create_new_image(id):
     data = form.data
 
     if form.validate_on_submit():
-        new_meeting_image = Meeting_Image(
+        new_meeting_image = MeetingImage(
             meeting_id=id,
             url=data["url"],
             caption=data["caption"],

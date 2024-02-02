@@ -1,13 +1,12 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from app.models import db, User, Article, Article_Image
+from app.models import db, User, Article, ArticleImage
 from datetime import datetime
 from app.forms.articles_form import ArticleForm
 from app.forms.article_images_form import ArticleImageForm
 
 article_routes = Blueprint("articles", __name__)
-
 
 # CREATE NEW ARTICLE
 @article_routes.route("/", methods=["POST"])
@@ -119,7 +118,7 @@ def create_new_image(id):
     data = form.data
 
     if form.validate_on_submit():
-        new_article_image = Article_Image(
+        new_article_image = ArticleImage(
             article_id=id,
             url=data["url"],
             caption=data["caption"],

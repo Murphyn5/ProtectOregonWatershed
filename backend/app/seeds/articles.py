@@ -5,24 +5,6 @@ from sqlalchemy.sql import text
 def seed_articles():
 
     article1 = Article(
-        title="Sample Article 2",
-        source="Sample Source 2",
-        date_posted=datetime(2023, 2, 20, 10, 0, 0),  # Replace with an actual date
-        link="https://example.com/article2",
-        created_at=datetime.utcnow(),
-        updated_at=datetime.utcnow(),
-    )
-
-    article2 = Article(
-        title="Legislative Action Causes Threat To Estuary",
-        source="Newport NewsTimes",
-        date_posted=datetime(2023, 9, 27),  # Replace with an actual date
-        link="https://www.newportnewstimes.com/opinion/column-legislative-action-causes-threat-to-estuary/article_936f554a-525c-11ee-b7d6-af3df7789d16.html",
-        created_at=datetime.utcnow(),
-        updated_at=datetime.utcnow(),
-    )
-
-    article3 = Article(
         title="Yachats News Editorial",
         source="Yachats News",
         date_posted=datetime(2023, 10, 23),  # Replace with an actual date
@@ -31,7 +13,7 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article4 = Article(
+    article2 = Article(
         title="Science is the focus, chemical to be sprayed causes cancer",
         source="Newport NewsTimes",
         date_posted=datetime(2023, 9, 23),  # Replace with an actual date
@@ -40,7 +22,18 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article5 = Article(
+
+    article3 = Article(
+        title="Legislative Action Causes Threat To Estuary",
+        source="Newport NewsTimes",
+        date_posted=datetime(2023, 9, 27),  # Replace with an actual date
+        link="https://www.newportnewstimes.com/opinion/column-legislative-action-causes-threat-to-estuary/article_936f554a-525c-11ee-b7d6-af3df7789d16.html",
+        created_at=datetime.utcnow(),
+        updated_at=datetime.utcnow(),
+    )
+
+
+    article4 = Article(
         title="Lock Down For Old Growth",
         source="Eugene Weekly",
         date_posted=datetime(2023, 9, 26),  # Replace with an actual date
@@ -49,7 +42,7 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article6 = Article(
+    article5 = Article(
         title="Protestors Launch Tree Sit to Protect Old Growth",
         source="Cascadia Forest Defenders",
         date_posted=datetime(2023, 9, 26),  # Replace with an actual date
@@ -58,7 +51,7 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article7 = Article(
+    article6 = Article(
         title="NASA Imagery Shows Impact of Logging in OR Coast Watersheds",
         source="Oregon Capital Chronicle",
         date_posted=datetime(2023, 9, 19),  # Replace with an actual date
@@ -67,7 +60,7 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article8 = Article(
+    article7 = Article(
         title="Timber company owner says it will not spray herbicides by helicopter in South Beaver Creek, but use ground crews instead",
         source="Yachats News",
         date_posted=datetime(2023, 9, 12),  # Replace with an actual date
@@ -76,7 +69,7 @@ def seed_articles():
         updated_at=datetime.utcnow(),
     )
 
-    article9 = Article(
+    article8 = Article(
         title="Opposition to Herbicide Spraying Continues",
         source="Newport NewsTimes",
         date_posted=datetime(2023, 9, 12),  # Replace with an actual date
@@ -87,7 +80,7 @@ def seed_articles():
 
 
     # Add seed data to the database session
-    db.session.add_all([article1, article2, article3, article4, article5, article6, article7, article8, article9])
+    db.session.add_all([article1, article2, article3, article4, article5, article6, article7, article8])
 
     # Commit the changes to the database
     db.session.commit()

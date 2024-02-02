@@ -7,6 +7,8 @@ export default function About() {
     <div style={{ padding: '20px' }}>
       <h1>Admin Page</h1>
       <div>
+        {/* add a admin check if not login show loginForm else show bottom events */}
+        {/* use tabs through next ui */}
         <EventForm />
         <ArticleForm />
       </div>

@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.models import db, Documentary_Image
+from app.models import db, DocumentaryImage
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_required
 
@@ -10,7 +10,7 @@ documentary_image_routes = Blueprint('documentary_images', __name__)
 @documentary_image_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
 def images_delete(id):
-    image = Documentary_Image.query.get(id)
+    image = DocumentaryImage.query.get(id)
     if not image:
         return {
             "errors": "Documentary Image couldn't be found",
@@ -27,7 +27,7 @@ def images_delete(id):
 # GET IMAGE BY CURRENT ID
 @documentary_image_routes.route('/<int:id>')
 def get_image_details(id):
-    image = Documentary_Image.query.get(id).to_dict()
+    image = DocumentaryImage.query.get(id).to_dict()
     if not image:
         return {
             "errors": "Image couldn't be found",
