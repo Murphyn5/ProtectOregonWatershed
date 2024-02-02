@@ -10,6 +10,7 @@ from .api.auth_routes import auth_routes
 from .api.article_routes import article_routes
 from .api.article_image_routes import article_image_routes
 from .api.community_event_routes import community_event_routes
+from .api.community_event_image_routes import community_event_image_routes
 from .api.documentary_image_routes import documentary_image_routes
 from .api.documentary_routes import documentary_routes
 from .api.meeting_routes import meeting_routes
@@ -40,6 +41,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(article_routes, url_prefix='/api/articles')
 app.register_blueprint(article_image_routes, url_prefix='/api/article_images')
 app.register_blueprint(community_event_routes, url_prefix='/api/community_events')
+app.register_blueprint(community_event_image_routes, url_prefix='/api/community_event_images')
 app.register_blueprint(documentary_image_routes, url_prefix='/api/documentary_images')
 app.register_blueprint(documentary_routes, url_prefix='/api/documentaries')
 app.register_blueprint(meeting_routes, url_prefix='/api/meetings')
