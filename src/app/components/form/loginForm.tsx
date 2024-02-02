@@ -24,7 +24,10 @@ const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log('Form Data Submitted', formData);
-    makeRequest('/api/auth/login', 'POST', formData).then((response: any) => {
+    // makeRequest('/api/auth/login', 'POST', formData).then((response: any) => {
+    //   console.log('response:', response);
+    // });
+    makeRequest('/api/articles/', 'GET').then((response: any) => {
       console.log('response:', response);
     });
     // const response = await fetch('http://127.0.0.1:8000/api/auth/login', {
