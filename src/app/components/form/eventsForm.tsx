@@ -17,7 +17,7 @@ export default function EventForm() {
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="p-20">
       <div
         style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
       >
