@@ -9,7 +9,7 @@ export default function EventForm() {
   const [Error, setError] = useState('no error');
 
   useEffect(() => {
-    makeRequest('/posts', 'GET').then((response: any) => {
+    makeRequest('/api/articles', 'GET').then((response: any) => {
       console.log('response:', response);
       setData(response.data);
       setError(response.error);

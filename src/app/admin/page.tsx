@@ -1,6 +1,7 @@
 import { Button } from '@nextui-org/react';
 import EventForm from '../components/form/eventsForm';
 import ArticleForm from '../components/form/articleForm';
+import LoginForm from '../components/form/loginForm';
 
 export default function About() {
   return (
@@ -9,6 +10,7 @@ export default function About() {
       <div>
         {/* add a admin check if not login show loginForm else show bottom events */}
         {/* use tabs through next ui */}
+        <LoginForm />
         <EventForm />
         <ArticleForm />
       </div>
