@@ -32,7 +32,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="event">
+          <Link color="foreground" href="events">
             Events
           </Link>
         </NavbarItem>
