@@ -21,11 +21,6 @@ export default function Nav() {
             About
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link color="secondary" href="events" aria-current="page">
-            events
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="action">
             Action
@@ -37,7 +32,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="event">
+          <Link color="foreground" href="events">
             Events
           </Link>
         </NavbarItem>
