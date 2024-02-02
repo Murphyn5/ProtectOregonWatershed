@@ -24,7 +24,11 @@ const ArticleForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const { data, error } = await makeRequest('/api/article/', 'POST', article); // Adjust the URL as needed
+    const { data, error } = await makeRequest(
+      '/api/articles/',
+      'POST',
+      article
+    ); // Adjust the URL as needed
     if (error) {
       setError(error);
       setSuccess(false);

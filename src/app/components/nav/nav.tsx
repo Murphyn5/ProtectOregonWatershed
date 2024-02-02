@@ -3,10 +3,10 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   Button,
   Image,
 } from '@nextui-org/react';
+import Link from 'next/link';
 
 export default function Nav() {
   return (
