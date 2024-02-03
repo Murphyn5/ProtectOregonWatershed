@@ -4,17 +4,16 @@ const Main = () => {
   //   height: "48rem"
   // };
 
-  const defaultSection = "flex justify-center w-full"
-  const subHeading = "text-darkText text-7xl font-semibold m-0 p-0 mb-5";
-  const whiteParagraph = "text-white text-xl"
-  const darkParagraph = "text-darkText text-xl font-semibold"
-  const callText = "text-white text-5xl font-bold my-8 px-5 text-nowrap";
-  const callSplash = "flex w-full justify-center"
-  const readMore = "bg-midnightGreen px-5 py-2 mb-5"
+  const defaultSection = 'flex justify-center w-full';
+  const subHeading = 'text-darkText text-7xl font-semibold m-0 p-0 mb-5';
+  const whiteParagraph = 'text-white text-xl';
+  const darkParagraph = 'text-darkText text-xl font-semibold';
+  const callText = 'text-white text-5xl font-bold my-8 px-5 text-nowrap';
+  const callSplash = 'flex w-full justify-center';
+  const readMore = 'bg-midnightGreen px-5 py-2 mb-5';
 
   return (
     <>
-
       <section className="relative w-full h-96 m-0 p-0 flex items-center">
         <img
           src="/main.jpg"
@@ -38,7 +37,9 @@ const Main = () => {
         </div>
       </section>
 
-      <section className={`${defaultSection} bg-white min-w-full overflow-x-auto`}>
+      <section
+        className={`${defaultSection} bg-white min-w-full overflow-x-auto`}
+      >
         <h2 className={`${subHeading}`}>news</h2>
       </section>
       <section className={`${defaultSection} bg-white`}>
@@ -56,7 +57,9 @@ const Main = () => {
       <section className="flex w-full bg-white">
         <div className="flex flex-col items-center w-2/5 bg-persianGreen">
           <h3 className={`${callText}`}>join us</h3>
-          <button className={`${readMore} ${whiteParagraph}`}>[join button]</button>
+          <button className={`${readMore} ${whiteParagraph}`}>
+            [join button]
+          </button>
         </div>
         <img
           src="/join.jpg"
@@ -87,9 +90,8 @@ const Main = () => {
       <section className="bg-persianGreen p-1 flex justify-center">
         <h6>[footer]</h6>
       </section>
-
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
