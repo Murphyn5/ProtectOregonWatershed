@@ -33,11 +33,11 @@ const Events: React.FC = () => {
   const fetchData = async () => {
     try {
       const res = await fetch('api/community_events');
-      if (res.ok) {
+      if (!res.ok) {
         throw new Error('Failed to fetch events');
       };
-      const data = await res.json();
-      setEvents(data);
+      const { community_events } = await res.json();
+      setEvents(community_events);
     } catch (error) {
       throw error;
     } finally {
@@ -69,9 +69,9 @@ const Events: React.FC = () => {
         </p>
       </div>
 
-      {/* {Object.values(events[0]).map((event: Event) => (
+      {Object.values(events).map((event: Event) => (
         <Calender_event key={event.id} event={event} />
-      ))} */}
+      ))}
     </div>
   );
 };
