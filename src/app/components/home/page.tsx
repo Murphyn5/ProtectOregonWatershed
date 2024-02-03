@@ -1,3 +1,5 @@
+import { FaSun } from 'react-icons/fa';
+
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
   const subHeading = 'text-altText text-7xl font-semibold m-0 p-0 mb-5';
@@ -22,7 +24,7 @@ const Main = () => {
 
       <section className="flex w-full">
         <div className={`${callSplash} bg-splash1`}>
-          <h2 className={callText}>our mission</h2>
+          <h2 className={callText}>About</h2>
         </div>
         <div className={`${callSplash} bg-splash2`}>
           <h2 className={callText}>events</h2>
@@ -33,7 +35,7 @@ const Main = () => {
       </section>
 
       <section className={`${defaultSection} bg-background min-w-full overflow-x-auto`}>
-        <h2 className={`${subHeading}`}>news</h2>
+        <h2 className={`${subHeading}`}><FaSun />news</h2>
       </section>
       <section className={`${defaultSection} bg-background`}>
         <button className={`${readMore} ${whiteParagraph}`}>read more</button>

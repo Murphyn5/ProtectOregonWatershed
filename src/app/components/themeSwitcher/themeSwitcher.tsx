@@ -17,7 +17,6 @@ export const ThemeSwitcher = () => {
 
   return (
     <div>
-      <p>The current theme is: {theme}</p>
       <Button onClick={() => setTheme('light')}>Light Mode</Button>
       <Button onClick={() => setTheme('dark')}>Dark Mode</Button>
       <Button onClick={() => setTheme('modern')}>Modern Mode</Button>
