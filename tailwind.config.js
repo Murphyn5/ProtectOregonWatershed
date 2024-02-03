@@ -27,7 +27,16 @@ module.exports = {
             'persianGreen': '#25A18E',
             'lightGreen': '#7AE582',
             'aquamarine': '#9FFFCB',
-            'darkText': '#333333'
+            // cross-theme tokens
+            'splash1': '#004E64',
+            'splash2': '#7AE582',
+            'splash3': '#25A18E',
+            'splash4': '#7AE582',
+            'splash5': '#9FFFCB',
+            'background': '#ffffff',
+            'whiteText': '#ffffff',
+            'darkText': '#333333',
+            'altText': '#333333'
           }, // light theme colors
           backgroundImage: {
             'main': "url('/main.jpg')"
@@ -36,12 +45,21 @@ module.exports = {
         dark: {
           layout: {}, // dark theme layout tokens
           colors: {
-            'midnightGreen': '#7AE582',
+            'midnightGreen': '#004E64',
             'pacificCyan': '#00A5CF',
             'persianGreen': '#25A18E',
-            'lightGreen': '#004E64',
+            'lightGreen': '#7AE582',
             'aquamarine': '#9FFFCB',
-            'darkText': '#333333'
+            // cross-theme tokens
+            'splash1': '#7AE582',
+            'splash2': '#25A18E',
+            'splash3': '#00A5CF',
+            'splash4': '#7AE582',
+            'splash5': '#9FFFCB',
+            'background': '#004E64',
+            'whiteText': '#ffffff',
+            'darkText': '#333333',
+            'altText': '#ffffff'
           }, // dark theme colors
         },
         modern: {
