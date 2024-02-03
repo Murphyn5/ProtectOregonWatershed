@@ -1,9 +1,4 @@
 const Main = () => {
-  // const imageStyle = {
-  //   // backgroundImage: `url(${mainBackground})`
-  //   height: "48rem"
-  // };
-
   const defaultSection = 'flex justify-center w-full';
   const subHeading = 'text-darkText text-7xl font-semibold m-0 p-0 mb-5';
   const whiteParagraph = 'text-white text-xl';
@@ -64,7 +59,6 @@ const Main = () => {
         <img
           src="/join.jpg"
           alt="main image"
-          // className="w-full h-full object-cover fixed -z-10 m-0 p-0"
           className="w-3/5 object-cover h-44 object-top"
         />
       </section>
