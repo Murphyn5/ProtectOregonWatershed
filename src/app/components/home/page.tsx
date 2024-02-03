@@ -5,7 +5,7 @@ const Main = () => {
   const darkParagraph = 'text-altText text-xl font-semibold';
   const callText = 'text-white text-5xl font-bold my-8 px-5 text-nowrap';
   const callSplash = 'flex w-full justify-center';
-  const readMore = 'bg-midnightGreen px-5 py-2 mb-5';
+  const readMore = 'bg-splash1 px-5 py-2 mb-5';
 
   return (
     <main className="relative -z-20 bg-background">
