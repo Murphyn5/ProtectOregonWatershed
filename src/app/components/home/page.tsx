@@ -1,4 +1,4 @@
-import { FaSun } from 'react-icons/fa';
+// import { FaSun } from 'react-icons/fa';
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -35,7 +35,7 @@ const Main = () => {
       </section>
 
       <section className={`${defaultSection} bg-background min-w-full overflow-x-auto`}>
-        <h2 className={`${subHeading}`}><FaSun />news</h2>
+        <h2 className={`${subHeading}`}>news</h2>
       </section>
       <section className={`${defaultSection} bg-background`}>
         <button className={`${readMore} ${whiteParagraph}`}>read more</button>
