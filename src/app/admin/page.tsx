@@ -28,9 +28,6 @@ export default function About() {
   return (
     <div style={{ padding: '20px' }}>
       <div>
-        {loggedIn ? (
-          <LoginForm />
-        ) : (
           <Tabs color="primary" aria-label="Dynamic tabs" items={tabs}>
             {(item) => (
               <Tab title={item.id}>
@@ -40,7 +37,6 @@ export default function About() {
               </Tab>
             )}
           </Tabs>
-        )}
       </div>
     </div>
   );

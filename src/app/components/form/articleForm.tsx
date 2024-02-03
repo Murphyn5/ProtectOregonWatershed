@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import makeRequest from '../../../api/ServerAPI';
+import makeRequest from '@/api/ServerAPI';
 // Import UI components from your UI library
 import { Input, Button, Spacer } from '@nextui-org/react';
 
@@ -27,6 +27,7 @@ const ArticleForm = () => {
     const { data, error } = await makeRequest(
       '/api/articles/',
       'POST',
+      "csrd",
       article
     ); // Adjust the URL as needed
     if (error) {

@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, make_response, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -53,6 +53,13 @@ Migrate(app, db)
 # Application Security
 CORS(app)
 
+@app.route('/api/get_csrf_token', methods=['GET'])
+def get_csrf_token():
+    csrf_token = generate_csrf()
+    response = make_response(jsonify({'csrf_token': csrf_token}))
+    response.headers['Set-Cookie'] = f'csrf_token={csrf_token}; Secure; HttpOnly; SameSite=Strict'
+    return response
+
 
 # Since we are deploying with Docker and Flask,
 # we won't be using a buildpack when we deploy to Heroku.
@@ -68,16 +75,16 @@ def https_redirect():
             return redirect(url, code=code)
 
 
-@app.after_request
-def inject_csrf_token(response):
-    response.set_cookie(
-        'csrf_token',
-        generate_csrf(),
-        secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
-        samesite='Strict' if os.environ.get(
-            'FLASK_ENV') == 'production' else None,
-        httponly=True)
-    return response
+# @app.after_request
+# def inject_csrf_token(response):
+#     response.set_cookie(
+#         'csrf_token',
+#         generate_csrf(),
+#         secure=True if os.environ.get('FLASK_ENV') == 'production' else False,
+#         samesite='Strict' if os.environ.get(
+#             'FLASK_ENV') == 'production' else None,
+#         httponly=True)
+#     return response
 
 
 @app.route("/api/docs")
