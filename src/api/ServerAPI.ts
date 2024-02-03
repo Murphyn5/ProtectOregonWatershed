@@ -1,8 +1,11 @@
 // const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL; // Replace with your API's base URL
-// const BASE_URL = 'http://localhost:3000';
-const BASE_URL = 'https://jsonplaceholder.typicode.com';
+import Cookies from 'js-cookie';
+const BASE_URL = 'http://127.0.0.1:8000';
+// const BASE_URL = 'https://jsonplaceholder.typicode.com';
 // using this site to test api calls
 // https://jsonplaceholder.typicode.com/guide/
+
+// set state in here and return it as a state and use it as a hook.
 
 interface RequestResponse {
   data: any | null;
@@ -17,7 +20,9 @@ async function makeRequest(
   const requestOptions = {
     method,
     ...(payload && {
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(payload),
     }),
   };

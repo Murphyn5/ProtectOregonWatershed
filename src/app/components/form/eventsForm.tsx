@@ -9,7 +9,7 @@ export default function EventForm() {
   const [Error, setError] = useState('no error');
 
   useEffect(() => {
-    makeRequest('/posts', 'GET').then((response: any) => {
+    makeRequest('/api/articles', 'GET').then((response: any) => {
       console.log('response:', response);
       setData(response.data);
       setError(response.error);
@@ -17,7 +17,7 @@ export default function EventForm() {
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="p-20">
       <div
         style={{ marginBottom: '20px', fontSize: '24px', fontWeight: 'bold' }}
       >
