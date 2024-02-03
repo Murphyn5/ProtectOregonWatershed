@@ -21,40 +21,20 @@ const Events: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetch('/api/community_events')
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       setEvents(Object.values(res));
-  //       setLoading(false);
-  //     });
-  // }, []);
-
-  const fetchData = async () => {
-    try {
-      const res = await fetch('api/community_events');
-      if (!res.ok) {
-        throw new Error('Failed to fetch events');
-      };
-      const { community_events } = await res.json();
-      setEvents(community_events);
-    } catch (error) {
-      throw error;
-    } finally {
-      setLoading(false);
-    };
-  };
-
   useEffect(() => {
-    fetchData()
+    fetch('/api/community_events')
+      .then((res) => res.json())
+      .then((res) => {
+        setEvents(Object.values(res));
+        setLoading(false);
+      });
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!events) return <p>No profile data</p>;
 
-  console.log('EVENTS:', events);
-  // console.log('events:', Object.values(events[0])[1]);
-  // console.log('imgs:', Object.values(events[0])[1]['images'][0]);
+  console.log('events:', Object.values(events[0])[1]);
+  console.log('imgs:', Object.values(events[0])[1]['images'][0]);
   return (
     <div
       style={{ padding: '20px' }}
@@ -69,7 +49,7 @@ const Events: React.FC = () => {
         </p>
       </div>
 
-      {Object.values(events).map((event: Event) => (
+      {Object.values(events[0]).map((event: Event) => (
         <Calender_event key={event.id} event={event} />
       ))}
     </div>

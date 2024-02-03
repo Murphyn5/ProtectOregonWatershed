@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "flask-dev": "FLASK_DEBUG=1 pip3 install -r requirements.txt && flask --app api/index db init && flask --app api/index db migrate && flask --app api/index db upgrade && flask --app api/index seed all && python3 -m flask --app api/index run -p 8000",
+    "next-dev": "next dev",
+    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
     "build": "next build",
     "start": "next start",
-    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\""
+    "lint": "next lint"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

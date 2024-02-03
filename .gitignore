@@ -46,3 +46,6 @@ __pycache__/
 .venv
 .DS_Store
 .vscode/
+Pipfile
+Pipfile.lock
+/migrations
