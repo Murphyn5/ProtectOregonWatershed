@@ -7,7 +7,6 @@ from flask_login import LoginManager
 from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
-from .api.community_event_routes import community_event_routes
 from .api.article_routes import article_routes
 from .api.article_image_routes import article_image_routes
 from .api.community_event_routes import community_event_routes
