@@ -1,4 +1,5 @@
 import MainArticleList from "../mainArticleList/page";
+import MainEventsList from "../mainEventsList/page";
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -56,8 +57,9 @@ const Main = () => {
         <h2 className="text-white text-5xl italic">[mission continued]</h2>
       </section>
 
-      <section className={`${defaultSection} bg-background py-5`}>
+      <section className={`${newsSection} bg-background py-5`}>
         <h2 className={`${subHeading}`}>Upcoming Events</h2>
+        <MainEventsList />
       </section>
 
       <section className="flex w-full bg-background">

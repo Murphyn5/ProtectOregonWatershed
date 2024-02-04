@@ -1,7 +1,17 @@
 'use client';
-import { Button } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
-import Article from '../article/Article';
+
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Link,
+  Tooltip,
+} from '@nextui-org/react';
+import Image from 'next/image';
+
 
 const MainArticleList: React.FC = () => {
   interface Article {
@@ -41,9 +51,40 @@ const MainArticleList: React.FC = () => {
   if (!articleList) return <p>No data</p>;
 
   return (
-    <div className='flex'>
-      {articleList.slice(0, 3).map((article: Article) => (
-        <Article key={article.id} article={article} />
+    <div className='flex gap-5 mx-5 mb-5'>
+      {articleList.slice(0, 3).map(article => (
+        <Link isExternal href={article.link} key={article.id} className='w-1/3 h-max'>
+          <Tooltip
+            content="click to explore more about this article"
+            placement="top-end"
+          >
+            <Card
+              key={article.id}
+              className='w-full h-max'
+            >
+              <CardBody className="py-2 flex h-max">
+                <div className="flex flex-col items-start gap-1 h-max">
+                  <Image
+                    alt="pictures"
+                    className="object-cover rounded-xl"
+                    src={article.images[0].url}
+                    width={270}
+                    height={270}
+                  />
+                  <h1 className="flex flex-wrap text-2xl text-red-500 font-extrabold">
+                    {article.title}
+                  </h1>
+                  <h2 className="text-lg font-bold">
+                    {article.source}
+                  </h2>
+                  <h2 className="text-md font-bold">
+                    {article.date_posted}
+                  </h2>
+                </div>
+              </CardBody>
+            </Card>
+          </Tooltip>
+        </Link>
       ))}
     </div>
   );
