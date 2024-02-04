@@ -1,4 +1,4 @@
-import ArticleList from "../articleList/page";
+import MainArticleList from "../mainArticleList/page";
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -8,6 +8,7 @@ const Main = () => {
   const callText = 'text-white text-5xl font-bold my-8 px-5 text-nowrap';
   const callSplash = 'flex w-full justify-center';
   const readMore = 'bg-splash1 px-5 py-2 mb-5';
+  const newsSection = 'flex flex-col w-full items-center';
 
   return (
     <main className="relative -z-20 bg-background">
@@ -34,7 +35,7 @@ const Main = () => {
         </div>
       </section>
 
-      <section className={`${defaultSection} bg-background min-w-full overflow-x-auto`}>
+      <section className={`${newsSection} bg-background overflow-x-auto`}>
         <h2 className={`${subHeading}`}>
           {/* <svg
             fill="altText"
@@ -45,7 +46,7 @@ const Main = () => {
             <path d="M8 11a3 3 0 110-6 3 3 0 010 6zm0 1a4 4 0 100-8 4 4 0 000 8zM8 0a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 018 0zm0 13a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 018 13zm8-5a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2a.5.5 0 01.5.5zM3 8a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2A.5.5 0 013 8zm10.657-5.657a.5.5 0 010 .707l-1.414 1.415a.5.5 0 11-.707-.708l1.414-1.414a.5.5 0 01.707 0zm-9.193 9.193a.5.5 0 010 .707L3.05 13.657a.5.5 0 01-.707-.707l1.414-1.414a.5.5 0 01.707 0zm9.193 2.121a.5.5 0 01-.707 0l-1.414-1.414a.5.5 0 01.707-.707l1.414 1.414a.5.5 0 010 .707zM4.464 4.465a.5.5 0 01-.707 0L2.343 3.05a.5.5 0 11.707-.707l1.414 1.414a.5.5 0 010 .708z" />
           </svg> */}
           News</h2>
-        <ArticleList />
+        <MainArticleList />
       </section>
       <section className={`${defaultSection} bg-background`}>
         <button className={`${readMore} ${whiteParagraph}`}>read more</button>
@@ -72,16 +73,16 @@ const Main = () => {
       </section>
 
       <section className="flex w-full p-5 bg-background">
-        <div className="flex flex-col gap-4 items-start w-2/5">
+        <div className="flex flex-col gap-1 items-start w-2/5">
           <h4 className={`${darkParagraph}`}>Email</h4>
-          <p className={`${darkParagraph}`}>info@stop-the-spray.com</p>
-          <p className={`${darkParagraph}`}>beavercreekstopthespray@gmail.com</p>
+          <p className={`${darkParagraph} font-light`}>info@stop-the-spray.com</p>
+          <p className={`${darkParagraph} font-light`}>beavercreekstopthespray@gmail.com</p>
         </div>
         <div className="flex items-start w-3/5">
-          <div className="flex flex-col w-3/5 gap-4">
+          <div className="flex flex-col w-3/5 gap-1">
             <h5 className={`${darkParagraph}`}>Adress</h5>
-            <p className={`${darkParagraph}`}>Beaver Creek Rd, S. Low Rd</p>
-            <p className={`${darkParagraph}`}>Seal Rock, OR 97376</p>
+            <p className={`${darkParagraph} font-light`}>Beaver Creek Rd, S. Low Rd</p>
+            <p className={`${darkParagraph} font-light`}>Seal Rock, OR 97376</p>
             {/* <form className="flex flex-col items-start gap-2">
               <input id="spray-notification-input" type="email" />
               <button className={`${darkParagraph}`}>[email submit]</button>

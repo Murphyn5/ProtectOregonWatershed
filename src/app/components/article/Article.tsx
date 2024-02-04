@@ -37,10 +37,10 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
       >
         <Card
           key={article.id}
-          className="py-4 w-full max-w-screen-md border hover:border-persianGreen"
+          className="py-4 border hover:border-persianGreen"
         >
           <CardBody className="py-2 flex-row gap-10">
-            <div className="w-1/4">
+            <div className="flex flex-col items-start gap-3">
               <Image
                 alt="pictures"
                 className="object-cover rounded-xl"
@@ -48,25 +48,15 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
                 width={270}
                 height={270}
               />
-            </div>
-            <div className="w-1/4 flex flex-col items-center gap-3">
-              <h2 className="text-lg font-bold uppercase text-center">
+              <h1 className="text-2xl text-red-500 font-extrabold">
                 {article.title}
-              </h2>
+              </h1>
               <h2 className="text-lg font-bold uppercase text-center">
                 {article.source}
               </h2>
-              <h2 className="text-lg font-bold uppercase text-center">
+              <h2 className="text-md font-bold uppercase text-center">
                 {article.date_posted}
               </h2>
-            </div>
-            <div className="w-1/2 flex flex-col gap-3">
-              <h1 className="text-3xl text-red-500 font-extrabold">
-                {article.title}
-              </h1>
-              <h3 className="text-base text-default-500">
-                Location: {article.link}
-              </h3>
             </div>
           </CardBody>
         </Card>
