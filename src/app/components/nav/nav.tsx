@@ -39,7 +39,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <ThemeSwitcher />
+      {/* <ThemeSwitcher /> */}
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Button
