@@ -29,7 +29,7 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
   console.log('IMAGE URL:', article.images[0].url)
 
   return (
-    <Link isExternal href={article.link} key={article.id}>
+    <Link isExternal href={article.link} key={article.id} className='h-20'>
       <Tooltip
         content="click to explore more about this article"
         placement="top-end"
