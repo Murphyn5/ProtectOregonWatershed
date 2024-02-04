@@ -11,8 +11,21 @@ export default function Footer() {
         <div className="flex items-center justify-center">
           <Link href="/attribution">Special Thanks ❤️</Link>
         </div>
-        <div className="flex items-center justify-center">
-          Instagram Icon, Facebook Icon, Youtube Icon
+        <div className="flex items-center justify-center gap-4">
+          <Link
+            href="https://www.facebook.com/groups/1995140274187439"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Facebook
+          </Link>
+          <Link
+            href="https://www.instagram.com/stopthespray/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Instagram
+          </Link>
         </div>
       </div>
     </div>
