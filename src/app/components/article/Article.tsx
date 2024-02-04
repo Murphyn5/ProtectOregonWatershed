@@ -18,7 +18,7 @@ interface Article {
   link: string;
   created_at: string;
   updated_at: string;
-  images: Array<string>;
+  images: Array<{ url: string }>;
 };
 
 interface ArticleProps {
@@ -26,6 +26,8 @@ interface ArticleProps {
 };
 
 const Article: React.FC<ArticleProps> = ({ article }) => {
+  console.log('IMAGE URL:', article.images[0].url)
+
   return (
     <Link isExternal href={article.link} key={article.id}>
       <Tooltip
@@ -42,7 +44,7 @@ const Article: React.FC<ArticleProps> = ({ article }) => {
               <Image
                 alt="pictures"
                 className="object-cover rounded-xl"
-                src={article.images[0]}
+                src={article.images[0].url}
                 width={270}
                 height={270}
               />
