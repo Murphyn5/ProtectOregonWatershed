@@ -1,4 +1,4 @@
-from models import db, ArticleImage, environment, SCHEMA
+from api.models import db, ArticleImage, environment, SCHEMA
 from sqlalchemy.sql import text
 from datetime import datetime
 

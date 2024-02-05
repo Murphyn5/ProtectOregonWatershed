@@ -11,7 +11,7 @@ class ArticleImage(db.Model, UserMixin):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    article_id = db.Column(db.Integer, db.ForeignKey("articles.id"))
+    article_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("articles.id")))
     url = db.Column(db.String, nullable=False)
     caption = db.Column(db.String)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
