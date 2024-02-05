@@ -77,7 +77,7 @@ const MainEventsList: React.FC = () => {
                   // width={300}
                   // height={270}
                   />
-                  <h1 className="flex flex-wrap text-2xl text-red-500 font-extrabold">
+                  <h1 className="flex flex-wrap text-2xl text-splash1 font-extrabold">
                     {event.title}
                   </h1>
                   <h2 className="text-lg font-bold">

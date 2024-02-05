@@ -73,7 +73,7 @@ const MainArticleList: React.FC = () => {
                     width={270}
                     height={270}
                   /> */}
-                  <h1 className="flex flex-wrap text-2xl text-red-500 font-extrabold">
+                  <h1 className="flex flex-wrap text-2xl text-splash1 font-extrabold">
                     {article.title}
                   </h1>
                   <h2 className="text-lg font-bold">
