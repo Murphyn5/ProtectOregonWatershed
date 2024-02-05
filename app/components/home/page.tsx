@@ -2,6 +2,18 @@ import MainArticleList from "../mainArticleList/page";
 import MainEventsList from "../mainEventsList/page";
 import Link from "next/link";
 import Image from "next/image";
+import { homeNews } from "./homeData";
+import News_card from "../news_card/news_card";
+
+interface News {
+  id: number;
+  title: string;
+  date_posted: string;
+  link: string;
+  source: string;
+  details: string;
+  // images: Array<string>;
+}
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -17,7 +29,7 @@ const Main = () => {
 
   return (
     <main className="bg-background">
-      <section className="relative w-full h-96 m-0 p-0 flex items-center">
+      <section className="relative w-full h-96 m-0 p-0 flex items-center justify-center">
         <img
           src="/main.jpg"
           alt="main image"
@@ -25,13 +37,18 @@ const Main = () => {
         />
         <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1>
+        </h1> 
+        {/* <div className="absolute div-background bottom-12 w-20 z-10">
+          <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
+            Stop The Spray!
+          </h1>
+        </div> */}
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
           <Link href="/action" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Our Mission</h1>
             <p className={callText2}>Our Goal, Vision & Commitment</p>
           </Link>
@@ -64,9 +81,14 @@ const Main = () => {
           </svg> */}
           News</h2>
         <MainArticleList />
+        {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center">
+          {Object.values(homeNews).map(article => (
+            <News_card key={article.id} n={article} />
+          ))}
+        </div> */}
       </section>
       <section className={`${defaultSection} bg-background`}>
-        <button className={`${readMore} ${whiteParagraph}`}>read more</button>
+        <Link href='/articles/' className={`${readMore} ${whiteParagraph}`}>Read More</Link>
       </section>
 
       <section className={`${defaultSection} bg-splash3 py-16`}>
@@ -87,7 +109,7 @@ const Main = () => {
         <img
           src="/collage1.jpeg"
           alt="main image"
-          className="w-3/5 object-cover h-44 object-top"
+          className="grid grid-cols-subgrid md:col-span-3 object-cover h-44 object-center w-full"
         />
       </section>
 

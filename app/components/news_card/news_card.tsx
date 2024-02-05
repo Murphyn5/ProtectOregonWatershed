@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import {
   Card,
@@ -10,12 +11,12 @@ import {
 import Image from 'next/image';
 
 interface News {
-    id: number;
-    title: string;
-    date_posted: string;
-    link: string;
-    source: string;
-    details: string;
+  id: number;
+  title: string;
+  date_posted: string;
+  link: string;
+  source: string;
+  details: string;
   // Add other properties as needed
 }
 
@@ -42,8 +43,8 @@ const News_card: React.FC<NewsProps> = ({ n }) => {
           <CardBody className="overflow-visible py-2">
             <p>{n.details}</p>
           </CardBody>
-          </Card>
-          
+        </Card>
+
       </Tooltip>
     </Link>
   );
