@@ -59,7 +59,7 @@ const Events: React.FC = () => {
         </p>
       </div>
 
-      {Object.values(events).map((event: Event) => (
+      {Object.values(events[0]).map((event: Event) => (
         <Calender_event key={event.id} event={event} />
       ))}
     </div>

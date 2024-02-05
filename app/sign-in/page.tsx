@@ -12,13 +12,13 @@ export default function SignInPage() {
   const [csrfToken, setCsrfToken] = useState("");
   const router = useRouter()
 
-  useEffect(() => {
-    // Fetch CSRF token from your server
-    fetch("/api/get_csrf_token")
-      .then((response) => response.json())
-      .then((data) => setCsrfToken(data.csrf_token))
-      .catch((error) => console.error("Error fetching CSRF token:", error));
-  }, []);
+  // useEffect(() => {
+  //   // Fetch CSRF token from your server
+  //   fetch("/api/get_csrf_token")
+  //     .then((response) => response.json())
+  //     .then((data) => setCsrfToken(data.csrf_token))
+  //     .catch((error) => console.error("Error fetching CSRF token:", error));
+  // }, []);
 
     // Define the function to handle form submission
   const handleSubmit = async (event: React.FormEvent) => {

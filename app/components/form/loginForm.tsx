@@ -24,16 +24,16 @@ const LoginForm: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    // Fetch CSRF token from your server
-    fetch("/api/get_csrf_token")
-      .then((response) => response.json())
-      .then((data) => {
-        setCsrfToken(data.csrf_token)
-        Cookies.set('csrf_token', data.csrf_token)
-      })
-      .catch((error) => console.error("Error fetching CSRF token:", error));
-  }, []);
+  // useEffect(() => {
+  //   // Fetch CSRF token from your server
+  //   fetch("/api/get_csrf_token")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setCsrfToken(data.csrf_token)
+  //       Cookies.set('csrf_token', data.csrf_token)
+  //     })
+  //     .catch((error) => console.error("Error fetching CSRF token:", error));
+  // }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
