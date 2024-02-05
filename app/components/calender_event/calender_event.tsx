@@ -18,7 +18,7 @@ interface Event {
   title: string;
   description: string;
   link: string;
-  images: Array<string>;
+  image: string;
   // Add other properties as needed
 }
 
@@ -36,19 +36,19 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
       >
         <Card
           key={event.id}
-          className="py-4 w-full max-w-screen-md border hover:border-persianGreen"
+          className="py-4 w-full max-w-screen-lg border hover:border-persianGreen"
         >
           <CardBody className="py-2 flex-row gap-10">
             <div className="w-1/4">
               <Image
                 alt="pictures"
                 className="object-cover rounded-xl"
-                src={event.images[0]}
-                width={270}
-                height={270}
+                src={event.image}
+                width={300}
+                height={300}
               />
             </div>
-            <div className="w-1/4 flex flex-col items-center gap-3">
+            <div className="w-1/4 flex flex-col items-center gap-5 pt-5">
               <h2 className="text-lg font-bold uppercase text-center">
                 {event.days}
               </h2>

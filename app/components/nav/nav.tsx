@@ -26,6 +26,7 @@ export default function Nav() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
+
     <Navbar 
     isBordered
     shouldHideOnScroll
@@ -35,6 +36,7 @@ export default function Nav() {
       <NavbarBrand className="gap-4" as={Link} href={"/"}>
         <Image src="/POW.png" alt="logo" width={45} />
         <p className="text-xl font-bold text-inherit">Protect Oregon Watershed</p>
+
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
        {menuItems.map((item, index) => (
@@ -43,6 +45,20 @@ export default function Nav() {
             {item}
           </Link>
         </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Button
+            href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform"
+            color="primary"
+            as={Link}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Join
+          </Button>
+        </NavbarItem>
+
        ))
       }
       </NavbarContent>
