@@ -44,6 +44,7 @@ const MainEventsList: React.FC = () => {
   if (isLoading) return <p>Loading...</p>;
   if (!events) return <p>No profile data</p>;
 
+  console.log('EVENTS:', events);
   // console.log('events:', Object.values(events[0])[1]);
   // console.log('imgs:', Object.values(events[0])[1]['images'][0]);
   return (

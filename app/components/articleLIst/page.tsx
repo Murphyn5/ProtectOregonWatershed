@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Article from '../../../../app/components/article/Article';
+import Article from '../article/Article';
 
 const ArticleList: React.FC = () => {
   interface Article {
