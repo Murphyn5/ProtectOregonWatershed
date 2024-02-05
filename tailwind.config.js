@@ -1,4 +1,4 @@
-const {nextui} = require("@nextui-org/react");
+const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -21,11 +21,46 @@ module.exports = {
       themes: {
         light: {
           layout: {}, // light theme layout tokens
-          colors: {}, // light theme colors
+          colors: {
+            'midnightGreen': '#004E64',
+            'pacificCyan': '#00A5CF',
+            'persianGreen': '#25A18E',
+            'lightGreen': '#7AE582',
+            'aquamarine': '#9FFFCB',
+            // cross-theme tokens
+            'splash1': '#004E64',
+            'splash2': '#7AE582',
+            'splash3': '#25A18E',
+            'splash4': '#7AE582',
+            'splash5': '#9FFFCB',
+            'background': '#ffffff',
+            'whiteText': '#ffffff',
+            'darkText': '#333333',
+            'altText': '#333333'
+          }, // light theme colors
+          backgroundImage: {
+            'main': "url('/main.jpg')"
+          },
         },
         dark: {
           layout: {}, // dark theme layout tokens
-          colors: {}, // dark theme colors
+          colors: {
+            'midnightGreen': '#004E64',
+            'pacificCyan': '#00A5CF',
+            'persianGreen': '#25A18E',
+            'lightGreen': '#7AE582',
+            'aquamarine': '#9FFFCB',
+            // cross-theme tokens
+            'splash1': '#7AE582',
+            'splash2': '#25A18E',
+            'splash3': '#00A5CF',
+            'splash4': '#7AE582',
+            'splash5': '#9FFFCB',
+            'background': '#004E64',
+            'whiteText': '#ffffff',
+            'darkText': '#333333',
+            'altText': '#ffffff'
+          }, // dark theme colors
         },
         modern: {
           extend: 'dark', // <- inherit default values from dark theme
