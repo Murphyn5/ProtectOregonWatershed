@@ -23,7 +23,7 @@ export default function About() {
           <Image src="/mission.jpeg" alt="Our Vision" width={1000} height={300} />
         </div>
         <div className="bg-white shadow-md rounded-lg max-w-1/2 flex flex-col justify-center items-center">
-          <div className="e">Our Mission</div>
+          <div className="text-5xl font-semibold text-grey-600 mb-2">Our Mission</div>
           <p className="text-gray-700 text-lg p-10">
             EMPOWERING THE COMMUNITY TOGETHER WE CAN MAKE A DIFFERENCE!
           </p>
