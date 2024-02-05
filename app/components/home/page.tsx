@@ -1,5 +1,7 @@
 import MainArticleList from "../mainArticleList/page";
 import MainEventsList from "../mainEventsList/page";
+import Link from "next/link";
+import Image from "next/image";
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -12,7 +14,7 @@ const Main = () => {
   const newsSection = 'flex flex-col w-full items-center';
 
   return (
-    <main className="relative -z-20 bg-background">
+    <main className="bg-background">
       <section className="relative w-full h-96 m-0 p-0 flex items-center">
         <img
           src="/main.jpg"
@@ -20,19 +22,28 @@ const Main = () => {
           className="w-full h-full object-cover m-0 p-0"
         />
         <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
-          [page subheading]
+          Stop The Spray!
         </h1>
       </section>
 
-      <section className="flex w-full">
-        <div className={`${callSplash} bg-splash1`}>
-          <h2 className={callText}>Our Mission</h2>
+      <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
+        <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
+          <Link href="/action" rel="noopener noreferrer"
+        target="_blank" >
+            <h1 className={callText}>Our Mission</h1>
+          </Link>
         </div>
-        <div className={`${callSplash} bg-splash2`}>
-          <h2 className={callText}>Our Vision</h2>
+        <div className="w-full h-50 flex flex-col items-center justify-center bg-midnightGreen">
+          <Link href="/action" rel="noopener noreferrer"
+        target="_blank" >
+            <h1 className={callText}>Vision</h1>
+          </Link>
         </div>
-        <div className={`${callSplash} bg-splash3`}>
-          <h2 className={callText}>Get Involved</h2>
+        <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform" rel="noopener noreferrer"
+        target="_blank" >
+            <h1 className={callText}>Get Involved</h1>
+          </Link>
         </div>
       </section>
 
@@ -74,29 +85,29 @@ const Main = () => {
         />
       </section>
 
-      <section className="flex w-full p-5 bg-background">
-        <div className="flex flex-col gap-1 items-start w-2/5">
-          <h4 className={`${darkParagraph}`}>Email</h4>
+      <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
+        <div className="">
+          <h4 className={`${darkParagraph}`}>Email:</h4>
           <p className={`${darkParagraph} font-light`}>info@stop-the-spray.com</p>
           <p className={`${darkParagraph} font-light`}>beavercreekstopthespray@gmail.com</p>
         </div>
-        <div className="flex items-start w-3/5">
-          <div className="flex flex-col w-3/5 gap-1">
-            <h5 className={`${darkParagraph}`}>Adress</h5>
-            <p className={`${darkParagraph} font-light`}>Beaver Creek Rd, S. Low Rd</p>
-            <p className={`${darkParagraph} font-light`}>Seal Rock, OR 97376</p>
-            {/* <form className="flex flex-col items-start gap-2">
-              <input id="spray-notification-input" type="email" />
-              <button className={`${darkParagraph}`}>[email submit]</button>
-            </form> */}
-          </div>
-          <div className="w-2/5 flex justify-center items-center">
-            <img
-              src="/ODFlogoLarge.png"
-              alt="odf logo"
-              className="h-28"
-            />
-          </div>
+        <div className="flex flex-col w-3/5 gap-1">
+          <h5 className={`${darkParagraph}`}>Adress:</h5>
+          <p className={`${darkParagraph} font-light`}>Beaver Creek Rd, S. Low Rd</p>
+          <p className={`${darkParagraph} font-light`}>Seal Rock, OR 97376</p>
+          {/* <form className="flex flex-col items-start gap-2">
+            <input id="spray-notification-input" type="email" />
+            <button className={`${darkParagraph}`}>[email submit]</button>
+          </form> */}
+        </div>
+        <div className="">
+          <Image
+            src="/ODFlogoLarge.png"
+            alt="odf logo"
+            width={100}
+            height={100}
+            className="h-28"
+          />
         </div>
       </section>
 
