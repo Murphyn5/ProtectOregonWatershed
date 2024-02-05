@@ -6,6 +6,7 @@ import ToWriteCard from '../components/toWriteCard/toWriteCard';
 import MediaCard from '../components/mediaCard/mediaCard';
 import  {WriteList, SampleLetters, MediaList}  from './actionData.js';
 import Image from 'next/image';
+import EmailIcon from '@mui/icons-material/Email';
 // import Test from '../components/test_component/test';
 export default function Action() {
   return (
@@ -16,7 +17,7 @@ export default function Action() {
       </div>
       <div className="relative w-full h-[450px]"> {/* Set the desired height */}
         <Image
-          src="/main.jpg"
+          src="/event1.jpeg"
           alt="Our Vision"
           layout="fill"
           objectFit="cover" // or 'contain' based on your need
