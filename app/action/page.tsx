@@ -64,7 +64,7 @@ export default function Action() {
         <div className='text-4xl font-semibold text-grey-600 mb-2'>Writing Counts! Let Your Voice Be Heard!</div>
         <div className="grid grid-cols-1 md:grid-cols-2">
 
-          {WriteList.map((item: WriteListItem, index) => (
+          {WriteList.map((item: any, index) => (
             <ToWriteCard
               key={index}
               name={item.name}
@@ -78,7 +78,7 @@ export default function Action() {
       <div className='w-full py-10 flex flex-col items-center justify-center'>
         <div className='text-4xl font-semibold text-grey-600 mb-2' > For Reference: </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
-          {SampleLetters.map((item: SampleLetter, index) => (
+          {SampleLetters.map((item: any, index) => (
             <div key={index} className='flex flex-col justify-center items-center'>
               <Link href={item.link} rel="noopener noreferrer" target="_blank" className='border'>
                 <Image src={item.src} alt={'not found'} width={400} height={600} />
