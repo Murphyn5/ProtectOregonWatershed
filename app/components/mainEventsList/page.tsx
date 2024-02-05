@@ -19,15 +19,26 @@ const MainEventsList: React.FC = () => {
     // Add other properties as needed
   }
   const [events, setEvents] = useState<Event[]>([]);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  const fetchEvents = async () => {
+    try {
+      const res = await fetch('/api/articles/');
+      if (!res.ok) {
+        throw new Error('Failed to fetch articles');
+      };
+      const { events } = await res.json();
+      setEvents(Object.values(events));
+    } catch (err) {
+      setError('Error fetching articles');
+    } finally {
+      setIsLoading(false);
+    };
+  };
 
   useEffect(() => {
-    fetch('/api/community_events')
-      .then((res) => res.json())
-      .then((res) => {
-        setEvents(Object.values(res));
-        setLoading(false);
-      });
+    fetchEvents();
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
@@ -39,7 +50,7 @@ const MainEventsList: React.FC = () => {
     <div
       style={{ padding: '20px' }}
       className="flex flex-col items-center gap-3"
-    >{Object.values(events[0]).slice(0, 3).map((event: Event) => (
+    >{events.slice(0, 3).map((event: Event) => (
       <Calender_event key={event.id} event={event} />
     ))}
     </div>

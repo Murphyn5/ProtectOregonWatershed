@@ -1,8 +1,6 @@
 'use client';
-
-import { Button } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
-import Article from '../article/Article';
+import Article from '../../../../app/components/article/Article';
 
 const ArticleList: React.FC = () => {
   interface Article {
