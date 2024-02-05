@@ -3,6 +3,7 @@
 import { Button } from '@nextui-org/react';
 import React, { useState, useEffect } from 'react';
 import Calender_event from '../components/calender_event/calender_event';
+import makeRequest from '../ServerAPI';
 // import Test from '../components/test_component/test';
 
 const Events: React.FC = () => {
@@ -27,14 +28,20 @@ const Events: React.FC = () => {
       .then((res) => {
         setEvents(Object.values(res));
         setLoading(false);
+        console.log('res:', res);
       });
+    // makeRequest('GET', '/api/community_events')
+    //   .then((res) => {
+    //     setEvents(Object.values(res));
+    //     setLoading(false);
+    //   });
   }, []);
 
   if (isLoading) return <p>Loading...</p>;
   if (!events) return <p>No profile data</p>;
-
-  console.log('events:', Object.values(events[0])[1]);
-  console.log('imgs:', Object.values(events[0])[1]['images'][0]);
+  console.log('events:', events);
+  // console.log('events:', Object.values(events[0])[1]);
+  // console.log('imgs:', Object.values(events[0])[1]['images'][0]);
   return (
     <div
       style={{ padding: '20px' }}
@@ -49,9 +56,9 @@ const Events: React.FC = () => {
         </p>
       </div>
 
-      {Object.values(events[0]).map((event: Event) => (
+      {/* {Object.values(events[0]).map((event: Event) => (
         <Calender_event key={event.id} event={event} />
-      ))}
+      ))} */}
     </div>
   );
 };

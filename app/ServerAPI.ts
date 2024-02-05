@@ -1,6 +1,7 @@
 // const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL; // Replace with your API's base URL
 import Cookies from 'js-cookie';
-const BASE_URL = 'http://127.0.0.1:8000';
+// const BASE_URL = 'http://127.0.0.1:8000';
+const BASE_URL = 'http://127.0.0.1:5324';
 // const BASE_URL = 'https://jsonplaceholder.typicode.com';
 // using this site to test api calls
 // https://jsonplaceholder.typicode.com/guide/
@@ -15,7 +16,7 @@ interface RequestResponse {
 async function makeRequest(
   url: string,
   method: string,
-  csrf: string,
+  csrf?: string,
   payload?: any
 ): Promise<RequestResponse> {
   const requestOptions = {
