@@ -15,8 +15,12 @@ export default function Nav() {
   return (
     <Navbar isBordered>
       <NavbarBrand className="gap-4">
-        <Image src="/POW.png" alt="logo" width={55} />
-        <p className="font-bold text-inherit">Protect Oregon Watershed</p>
+        <Link href={"/"}>
+          <Image src="/POW.png" alt="logo" width={55} />
+        </Link>
+        <Link href={"/"}>
+          <p className="font-bold text-inherit">Protect Oregon Watershed</p>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
@@ -30,7 +34,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="article">
+          <Link color="foreground" href="articles">
             Articles
           </Link>
         </NavbarItem>
