@@ -27,15 +27,20 @@ const Main = () => {
 
   return (
     <main className="bg-background">
-      <section className="relative w-full h-96 m-0 p-0 flex items-center">
+      <section className="relative w-full h-96 m-0 p-0 flex items-center justify-center">
         <img
           src="/main.jpg"
           alt="main image"
           className="w-full h-full object-cover m-0 p-0"
         />
-        <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
+        {/* <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1>
+        </h1> */}
+        <div className="absolute div-background bottom-12 w-20 z-10">
+          <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
+            Stop The Spray!
+          </h1>
+        </div>
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
