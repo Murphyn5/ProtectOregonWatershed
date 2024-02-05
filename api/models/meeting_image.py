@@ -11,7 +11,7 @@ class MeetingImage(db.Model, UserMixin):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    meeting_id = db.Column(db.Integer, db.ForeignKey('meetings.id'))
+    meeting_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('meetings.id')))
     url = db.Column(db.String)
     caption = db.Column(db.String)
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())

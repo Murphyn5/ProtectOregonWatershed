@@ -1,16 +1,16 @@
 from flask.cli import AppGroup
-from seeds.users import seed_users, undo_users
-from seeds.noaps import seed_noaps, undo_noaps
-from seeds.articles import seed_articles, undo_articles
-from seeds.article_images import seed_article_images, undo_article_images
-from seeds.meetings import seed_meetings, undo_meetings
-from seeds.meeting_images import seed_meeting_images, undo_meeting_images
-from seeds.community_events import seed_community_events, undo_community_events
-from seeds.community_event_images import seed_community_event_images, undo_community_event_images
-from seeds.documentaries import seed_documentaries, undo_documentaries
-from seeds.documentary_images import seed_documentary_images, undo_documentary_images
+from api.seeds.users import seed_users, undo_users
+from api.seeds.noaps import seed_noaps, undo_noaps
+from api.seeds.articles import seed_articles, undo_articles
+from api.seeds.article_images import seed_article_images, undo_article_images
+from api.seeds.meetings import seed_meetings, undo_meetings
+from api.seeds.meeting_images import seed_meeting_images, undo_meeting_images
+from api.seeds.community_events import seed_community_events, undo_community_events
+from api.seeds.community_event_images import seed_community_event_images, undo_community_event_images
+from api.seeds.documentaries import seed_documentaries, undo_documentaries
+from api.seeds.documentary_images import seed_documentary_images, undo_documentary_images
 
-from models.db import db, environment, SCHEMA
+from api.models.db import db, environment, SCHEMA
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -48,7 +48,7 @@ def seed():
     # Add other seed functions here
 
 
-# Creates the `flask seed undo` command
+# Creates the `flask seed undo` commandd
 @seed_commands.command('undo')
 def undo():
     undo_documentary_images()

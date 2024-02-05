@@ -1,9 +1,9 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from models import db, Noap
+from api.models import db, Noap
 from datetime import datetime
-from forms.noaps_form import NoapForm
+from api.forms.noaps_form import NoapForm
 
 noap_routes = Blueprint("noaps", __name__)
 

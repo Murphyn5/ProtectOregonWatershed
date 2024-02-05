@@ -1,4 +1,3 @@
-from .db import db
 from .user import User
 from .article import Article
 from .article_image import ArticleImage
@@ -9,4 +8,4 @@ from .documentary import Documentary
 from .meeting import Meeting
 from .meeting_image import MeetingImage
 from .noap import Noap
-from .db import environment, SCHEMA
+from .db import db, environment, SCHEMA

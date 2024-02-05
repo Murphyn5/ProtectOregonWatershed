@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from models import db, CommunityEventImage
+from api.models import db, CommunityEventImage
 from .auth_routes import validation_errors_to_error_messages
 from flask_login import current_user, login_required
 

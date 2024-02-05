@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from models import db, User, Documentary, DocumentaryImage
+from api.models import db, User, Documentary, DocumentaryImage
 from datetime import datetime
-from forms.documentaries_form import DocumentaryForm
-from forms.documentary_images_form import DocumentaryImageForm
+from api.forms.documentaries_form import DocumentaryForm
+from api.forms.documentary_images_form import DocumentaryImageForm
 
 documentary_routes = Blueprint("documentaries", __name__)
 

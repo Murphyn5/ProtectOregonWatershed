@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import makeRequest from '@/api/ServerAPI';
 // Import UI components from your UI library
 import { Input, Button, Spacer } from '@nextui-org/react';
 
@@ -24,18 +23,7 @@ const ArticleForm = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const { data, error } = await makeRequest(
-      '/api/articles/',
-      'POST',
-      "csrd",
-      article
-    ); // Adjust the URL as needed
-    if (error) {
-      setError(error);
-      setSuccess(false);
-      return;
-    }
-    setSuccess(true);
+
     // Optionally reset the form or handle the successful submission (e.g., redirect or display a success message)
   };
 

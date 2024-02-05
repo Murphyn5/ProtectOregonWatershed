@@ -1,10 +1,10 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from .auth_routes import validation_errors_to_error_messages
-from models import db, Meeting, MeetingImage
+from api.models import db, Meeting, MeetingImage
 from datetime import datetime
-from forms.meetings_form import MeetingForm
-from forms.meeting_images_form import MeetingImageForm
+from api.forms.meetings_form import MeetingForm
+from api.forms.meeting_images_form import MeetingImageForm
 
 meeting_routes = Blueprint("meetings", __name__)
 

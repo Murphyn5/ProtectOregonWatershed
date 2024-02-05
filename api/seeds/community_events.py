@@ -1,5 +1,5 @@
 from datetime import datetime
-from models import db, environment, SCHEMA, CommunityEvent
+from api.models import db, environment, SCHEMA, CommunityEvent
 from sqlalchemy.sql import text
 
 def seed_community_events():

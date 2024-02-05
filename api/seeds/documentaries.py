@@ -1,5 +1,5 @@
 from datetime import datetime
-from models import db, environment, SCHEMA, Documentary
+from api.models import db, environment, SCHEMA, Documentary
 from sqlalchemy.sql import text
 
 

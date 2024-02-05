@@ -11,7 +11,7 @@ class DocumentaryImage(db.Model, UserMixin):
         __table_args__ = {"schema": SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    documentary_id = db.Column(db.Integer, db.ForeignKey("documentaries.id"))
+    documentary_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("documentaries.id")))
     url = db.Column(db.String, nullable=False)
     caption = db.Column(db.String)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
