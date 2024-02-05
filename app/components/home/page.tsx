@@ -19,8 +19,10 @@ const Main = () => {
   const defaultSection = 'flex justify-center w-full';
   const subHeading = 'text-altText text-7xl font-semibold m-0 p-0 mb-5';
   const whiteParagraph = 'text-white text-xl';
-  const darkParagraph = 'text-altText text-xl font-semibold';
-  const callText = 'text-white text-5xl font-bold my-8 px-5 text-nowrap';
+  const darkParagraph = 'text-altText text-md';
+  const darkParagraph1 = 'text-altText text-xl font-semibold';
+  const callText = 'text-white text-5xl font-bold mt-8 mb-1 text-center';
+  const callText2 = 'text-white text-md mb-8 text-center';
   const callSplash = 'flex w-full justify-center';
   const readMore = 'bg-splash1 px-5 py-2 mb-5';
   const newsSection = 'flex flex-col w-full items-center';
@@ -33,14 +35,14 @@ const Main = () => {
           alt="main image"
           className="w-full h-full object-cover m-0 p-0"
         />
-        {/* <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
+        <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1> */}
-        <div className="absolute div-background bottom-12 w-20 z-10">
+        </h1> 
+        {/* <div className="absolute div-background bottom-12 w-20 z-10">
           <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
             Stop The Spray!
           </h1>
-        </div>
+        </div> */}
       </section>
 
       <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
@@ -48,18 +50,21 @@ const Main = () => {
           <Link href="/action" rel="noopener noreferrer"
             target="_blank" >
             <h1 className={callText}>Our Mission</h1>
+            <p className={callText2}>Our Goal, Vision & Commitment</p>
           </Link>
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-midnightGreen">
-          <Link href="/action" rel="noopener noreferrer"
-            target="_blank" >
-            <h1 className={callText}>Vision</h1>
+          <Link href="/events" rel="noopener noreferrer"
+        target="_blank" >
+            <h1 className={callText}>Our Events</h1>
+            <p className={callText2}>Register & Help Make Change</p>
           </Link>
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform" rel="noopener noreferrer"
-            target="_blank" >
+          <Link href="/action" rel="noopener noreferrer"
+        target="_blank" >
             <h1 className={callText}>Get Involved</h1>
+            <p className={callText2}>Take Action, Write or Participate</p>
           </Link>
         </div>
       </section>
@@ -87,7 +92,7 @@ const Main = () => {
       </section>
 
       <section className={`${defaultSection} bg-splash3 py-16`}>
-        <h2 className="text-white text-5xl italic">[mission continued]</h2>
+        <h2 className="text-white text-5xl ">Protect Our Water! Say No To Spray!</h2>
       </section>
 
       <section className={`${newsSection} bg-background py-5`}>
@@ -95,26 +100,27 @@ const Main = () => {
         <MainEventsList />
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-5">
-        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 bg-splash3">
-          <h3 className={`${callText}`}>Join Us</h3>
-          <button className={`${readMore} ${whiteParagraph}`}>Join</button>
+      <section className="flex w-full bg-background">
+        <div className="flex flex-col items-center justify-center w-2/5 bg-splash3">
+          <Link href="/action" >
+            <h3 className="text-white text-5xl font-bold m-4 text-center">Take Action!</h3>
+          </Link>
         </div>
         <img
-          src="/join.jpg"
+          src="/collage1.jpeg"
           alt="main image"
           className="grid grid-cols-subgrid md:col-span-3 object-cover h-44 object-center w-full"
         />
       </section>
 
-      <section className="grid grid-cols-1 gap-5 justify-items-center m-5 md:grid-cols-5 md:justify-items-start">
-        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 md:justify-items-start">
-          <h4 className={`${darkParagraph}`}>Email:</h4>
+      <section className="grid grid-cols-1 md:grid-cols-3 m-6 gap-6 ">
+        <div className="flex flex-col justify-center items-center">
+          <h4 className={`${darkParagraph1}`}>Email:</h4>
           <p className={`${darkParagraph} font-light`}>info@stop-the-spray.com</p>
           <p className={`${darkParagraph} font-light`}>beavercreekstopthespray@gmail.com</p>
         </div>
-        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 md:justify-items-start">
-          <h5 className={`${darkParagraph}`}>Adress:</h5>
+        <div className="flex flex-col justify-center items-center">
+          <h5 className={`${darkParagraph1}`}>Address:</h5>
           <p className={`${darkParagraph} font-light`}>Beaver Creek Rd, S. Low Rd</p>
           <p className={`${darkParagraph} font-light`}>Seal Rock, OR 97376</p>
           {/* <form className="flex flex-col items-start gap-2">
@@ -122,14 +128,17 @@ const Main = () => {
             <button className={`${darkParagraph}`}>[email submit]</button>
           </form> */}
         </div>
-        <div className="">
-          <Image
-            src="/ODFlogoLarge.png"
-            alt="odf logo"
-            width={100}
-            height={100}
-          // className="h-28"
-          />
+        <div className="flex flex-col justify-center items-center">
+          <Link href="https://ferns.odf.oregon.gov/E-Notification/CreateAccount" rel="noopener noreferrer" target="_blank" >
+            <Image
+              src="/ODFlogoLarge.png"
+              alt="odf logo"
+              width={70}
+              height={70}
+              className=""
+            />
+          </Link>
+          <p className="w-1/2 text-xs font-bold">Click ODF image above to receive email notices of aerial spraying within 1 mile of your home</p>
         </div>
       </section>
 
