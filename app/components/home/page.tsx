@@ -2,6 +2,18 @@ import MainArticleList from "../mainArticleList/page";
 import MainEventsList from "../mainEventsList/page";
 import Link from "next/link";
 import Image from "next/image";
+import { homeNews } from "./homeData";
+import News_card from "../news_card/news_card";
+
+interface News {
+  id: number;
+  title: string;
+  date_posted: string;
+  link: string;
+  source: string;
+  details: string;
+  // images: Array<string>;
+}
 
 const Main = () => {
   const defaultSection = 'flex justify-center w-full';
@@ -29,19 +41,19 @@ const Main = () => {
       <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
           <Link href="/action" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Our Mission</h1>
           </Link>
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-midnightGreen">
           <Link href="/action" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Vision</h1>
           </Link>
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLScQKxSTPGQJPBmkSgDoKctd584rfbl_hixjq0HBaUIw-CyUaw/viewform" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Get Involved</h1>
           </Link>
         </div>
@@ -59,9 +71,14 @@ const Main = () => {
           </svg> */}
           News</h2>
         <MainArticleList />
+        {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center">
+          {Object.values(homeNews).map(article => (
+            <News_card key={article.id} n={article} />
+          ))}
+        </div> */}
       </section>
       <section className={`${defaultSection} bg-background`}>
-        <button className={`${readMore} ${whiteParagraph}`}>read more</button>
+        <Link href='/articles/' className={`${readMore} ${whiteParagraph}`}>Read More</Link>
       </section>
 
       <section className={`${defaultSection} bg-splash3 py-16`}>
@@ -73,25 +90,25 @@ const Main = () => {
         <MainEventsList />
       </section>
 
-      <section className="flex w-full bg-background">
-        <div className="flex flex-col items-center w-2/5 bg-splash3">
+      <section className="grid grid-cols-1 md:grid-cols-5">
+        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 bg-splash3">
           <h3 className={`${callText}`}>Join Us</h3>
           <button className={`${readMore} ${whiteParagraph}`}>Join</button>
         </div>
         <img
           src="/join.jpg"
           alt="main image"
-          className="w-3/5 object-cover h-44 object-top"
+          className="grid grid-cols-subgrid md:col-span-3 object-cover h-44 object-center w-full"
         />
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
-        <div className="">
+      <section className="grid grid-cols-1 gap-5 justify-items-center m-5 md:grid-cols-5 md:justify-items-start">
+        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 md:justify-items-start">
           <h4 className={`${darkParagraph}`}>Email:</h4>
           <p className={`${darkParagraph} font-light`}>info@stop-the-spray.com</p>
           <p className={`${darkParagraph} font-light`}>beavercreekstopthespray@gmail.com</p>
         </div>
-        <div className="flex flex-col w-3/5 gap-1">
+        <div className="grid grid-cols-subgrid justify-items-center md:col-span-2 md:justify-items-start">
           <h5 className={`${darkParagraph}`}>Adress:</h5>
           <p className={`${darkParagraph} font-light`}>Beaver Creek Rd, S. Low Rd</p>
           <p className={`${darkParagraph} font-light`}>Seal Rock, OR 97376</p>
@@ -106,7 +123,7 @@ const Main = () => {
             alt="odf logo"
             width={100}
             height={100}
-            className="h-28"
+          // className="h-28"
           />
         </div>
       </section>
