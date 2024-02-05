@@ -8,6 +8,8 @@ import {
   Image,
 } from '@nextui-org/react';
 import Link from 'next/link';
+import { ThemeSwitcher } from '../../components/themeSwitcher/themeSwitcher';
+
 
 export default function Nav() {
   return (
@@ -38,6 +40,7 @@ export default function Nav() {
           </Link>
         </NavbarItem>
       </NavbarContent>
+      <ThemeSwitcher />
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Button
