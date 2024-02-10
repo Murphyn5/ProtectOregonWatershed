@@ -35,9 +35,14 @@ const Main = () => {
           alt="main image"
           className="w-full h-full object-cover m-0 p-0"
         />
-        <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
-          Stop The Spray!
-        </h1> 
+        {/* <div className="absolute div-white w-fit">
+          <h1
+            className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12"
+          >Stop The Spray!</h1>
+        </div> */}
+        <h1
+          className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12"
+        >Stop The Spray!</h1>
         {/* <div className="absolute div-background bottom-12 w-20 z-10">
           <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
             Stop The Spray!
@@ -55,14 +60,14 @@ const Main = () => {
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-midnightGreen">
           <Link href="/events" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Our Events</h1>
             <p className={callText2}>Register & Help Make Change</p>
           </Link>
         </div>
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
           <Link href="/action" rel="noopener noreferrer"
-        target="_blank" >
+            target="_blank" >
             <h1 className={callText}>Get Involved</h1>
             <p className={callText2}>Take Action, Write or Participate</p>
           </Link>
