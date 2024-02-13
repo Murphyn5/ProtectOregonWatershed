@@ -10,6 +10,6 @@ class Config:
     # so the connection uri must be updated here (for production)
     SQLALCHEMY_DATABASE_URI = os.environ.get('POSTGRES_URL').replace("postgres://", "postgresql://")
 
-     SQLALCHEMY_DATABASE_URI += '?sslmode=require&options=endpoint%3Dep-sweet-wildflower-a4o7r215-pooler'
+    SQLALCHEMY_DATABASE_URI += '?sslmode=require&options=endpoint%3Dep-sweet-wildflower-a4o7r215-pooler'
 
     SQLALCHEMY_ECHO = True
