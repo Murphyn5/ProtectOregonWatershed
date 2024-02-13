@@ -10,14 +10,6 @@
     "start": "next start",
     "lint": "next lint"
   },
-  "vercel": {
-    "builds": [
-      {
-        "src": "next-app",
-        "use": "@vercel/node"
-      }
-    ]
-  },
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
