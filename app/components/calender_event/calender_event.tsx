@@ -18,7 +18,7 @@ interface Event {
   title: string;
   description: string;
   link: string;
-  images: Array<string>;
+  images: string;
   // Add other properties as needed
 }
 
@@ -36,7 +36,7 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
       >
         <Card
           key={event.id}
-          className="py-4 w-full max-w-screen-md border hover:border-persianGreen"
+          className="py-4 w-full max-w-screen-lg border hover:border-persianGreen"
         >
           <CardBody className="py-2 flex-row gap-10">
             <div className="w-1/4">
@@ -44,11 +44,11 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
                 alt="pictures"
                 className="object-cover rounded-xl"
                 src={event.images[0]}
-                width={270}
-                height={270}
+                width={300}
+                height={300}
               />
             </div>
-            <div className="w-1/4 flex flex-col items-center gap-3">
+            <div className="w-1/4 flex flex-col items-center gap-5 pt-5">
               <h2 className="text-lg font-bold uppercase text-center">
                 {event.days}
               </h2>
@@ -60,7 +60,7 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
               </h2>
             </div>
             <div className="w-1/2 flex flex-col gap-3">
-              <h1 className="text-3xl text-red-500 font-extrabold">
+              <h1 className="text-3xl text-gray-500 font-extrabold">
                 {event.title}
               </h1>
               <h3 className="text-base text-default-500">

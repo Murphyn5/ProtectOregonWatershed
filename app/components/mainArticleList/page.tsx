@@ -12,6 +12,8 @@ import {
 } from '@nextui-org/react';
 import Image from 'next/image';
 
+import { homeNews } from '../home/homeData';
+
 
 const MainArticleList: React.FC = () => {
   interface Article {
@@ -51,9 +53,9 @@ const MainArticleList: React.FC = () => {
   if (!articleList) return <p>No data</p>;
 
   return (
-    <div className='flex gap-5 mx-5 mb-5'>
-      {articleList.slice(0, 3).map(article => (
-        <Link isExternal href={article.link} key={article.id} className='w-1/3 h-max'>
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center p-5 items-stretch">
+      {homeNews.map(article => (
+        <Link isExternal href={article.link} key={article.id} className='h-max'>
           <Tooltip
             content="click to explore more about this article"
             placement="top-end"
@@ -64,14 +66,14 @@ const MainArticleList: React.FC = () => {
             >
               <CardBody className="py-2 flex h-max">
                 <div className="flex flex-col items-start gap-1 h-max">
-                  <Image
+                  {/* <Image
                     alt="pictures"
                     className="object-cover rounded-xl"
                     src={article.images[0].url}
                     width={270}
                     height={270}
-                  />
-                  <h1 className="flex flex-wrap text-2xl text-red-500 font-extrabold">
+                  /> */}
+                  <h1 className="flex flex-wrap text-2xl text-splash1 font-extrabold">
                     {article.title}
                   </h1>
                   <h2 className="text-lg font-bold">
