@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "npm install --production=false && pnpm install --global pnpm && pnpm build && pip3 install -r requirements.txt && pip3 install --upgrade psycopg2-binary && flask --app api db upgrade && flask --app api db upgrade && flask --app api seed all"
+    "render-build": "npm install && pnpm build && pip3 install -r requirements.txt && pip3 install --upgrade psycopg2-binary && flask --app api db upgrade && flask --app api db upgrade && flask --app api seed all"
   },
   "vercel": {
     "builds": [
