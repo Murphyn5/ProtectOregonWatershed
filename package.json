@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "npm install --production=false && pnpm install --global pnpm && pnpm build && pip3 install -r requirements.txt && pip3 install --upgrade psycopg2-binary && flask --app api/index db upgrade && flask --app api/index db upgrade && flask --app api/index seed all"
+    "vercel-build": "npm install && pnpm build && pip3 install -r requirements.txt && pip3 install --upgrade psycopg2-binary && flask --app api/index db upgrade && flask --app api/index seed all"
   },
   "vercel": {
     "builds": [
@@ -34,7 +34,6 @@
     "concurrently": "^8.0.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
-    "js-cookie": "^3.0.5",
     "next": "13.4.3",
     "next-themes": "^0.2.1",
     "postcss": "8.4.23",
@@ -45,6 +44,5 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@types/js-cookie": "^3.0.6"
   }
 }
