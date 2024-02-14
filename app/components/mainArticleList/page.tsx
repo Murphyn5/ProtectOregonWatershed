@@ -12,8 +12,6 @@ import {
 } from '@nextui-org/react';
 import Image from 'next/image';
 
-import { homeNews } from '../home/homeData';
-
 
 const MainArticleList: React.FC = () => {
   interface Article {
@@ -54,7 +52,7 @@ const MainArticleList: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center p-5 items-stretch">
-      {homeNews.map(article => (
+      {articleList.map(article => (
         <Link isExternal href={article.link} key={article.id} className='h-max'>
           <Tooltip
             content="click to explore more about this article"
