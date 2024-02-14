@@ -37,7 +37,7 @@ const Main = () => {
         />
         <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1> 
+        </h1>
         {/* <div className="absolute div-background bottom-12 w-20 z-10">
           <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
             Stop The Spray!

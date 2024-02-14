@@ -36,13 +36,13 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
       >
         <Card
           key={event.id}
-          className="py-4 w-full max-w-screen-lg border hover:border-persianGreen"
+          className="py-2 w-full max-w-screen-lg border hover:border-persianGreen"
         >
           <CardBody className="py-2 flex-row gap-10">
             <div className="w-1/4">
               <Image
                 alt="pictures"
-                className="object-cover rounded-xl"
+                className="object-cover w-full h-full rounded-md"
                 src={event.images[0]}
                 width={300}
                 height={300}
