@@ -5,18 +5,10 @@
   "scripts": {
     "flask-dev": "FLASK_DEBUG=1 pip3 install -r requirements.txt && flask --app api/index db upgrade && flask --app api/index seed all && python3 -m flask --app api/index run -p 5324",
     "next-dev": "next dev",
-    "dev": "concurrently \"npm run next-dev\" \"pnpm run flask-dev\"",
-    "build": "npm install && next build && pip3 install -r requirements.txt && pip3 install --upgrade psycopg2-binary && flask --app api/index db upgrade && flask --app api/index seed all",
+    "dev": "pnpm run next-dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },
-  "vercel": {
-    "builds": [
-      {
-        "src": "next-app",
-        "use": "@vercel/node"
-      }
-    ]
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
