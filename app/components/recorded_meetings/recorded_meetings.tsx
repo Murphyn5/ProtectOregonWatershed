@@ -15,7 +15,7 @@ interface Meetings {
   meeting_date: string;
   link: string;
   description: string;
-  images: string[];
+  images: { url: string }[];
 }
 
 interface MeetingsProps {
