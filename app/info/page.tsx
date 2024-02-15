@@ -18,13 +18,14 @@ const Info: React.FC = () => {
     // images: Array<string>;
   }
 
+
   interface Meetings {
     id: number;
     title: string;
     meeting_date: string;
     link: string;
     description: string;
-    images: string[];
+    images: { url: string }[];
   }
 
   interface Documentaries {
