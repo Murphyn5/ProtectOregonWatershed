@@ -14,21 +14,21 @@ interface DocumentariesProp {
 }
 
 interface DocumentariesPropProp {
-    doc: DocumentariesProp;
+    element: DocumentariesProp;
 }
 
-const Documentaries: React.FC<DocumentariesPropProp> = ({ doc }) => {
+const Documentaries: React.FC<DocumentariesPropProp> = ({ element }) => {
     return (
-      <Link isExternal href={doc.link} key={doc.id}>
+      <Link isExternal href={element.link} key={element.id}>
         <Tooltip
           content="click to explore more"
           placement="top-end"
           className="text-persianGreen"
         >
         <div className='p-2 m-2 bg-persianGreen flex flex-col justify-center w-full'>
-          <h1 className='font-bold text-lg uppercase text-white'>{doc.title}</h1>
-          <h2 className='text-gray-300'>{doc.source}</h2>
-          <p className='text-2xl text-white'>{doc.description}</p>
+          <h1 className='font-bold text-lg uppercase text-white'>{element.title}</h1>
+          <h2 className='text-gray-300'>{element.source}</h2>
+          <p className='text-2xl text-white'>{element.description}</p>
         </div>
             
         </Tooltip>
