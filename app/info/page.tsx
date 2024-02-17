@@ -18,6 +18,7 @@ const Info: React.FC = () => {
     details: string;
   }
 
+
   interface Meetings {
     id: number;
     title: string;
