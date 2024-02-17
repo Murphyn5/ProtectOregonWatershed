@@ -88,7 +88,7 @@ const Info: React.FC = () => {
     },
     {
       id: "recorded_meetings",
-      label: "Recorded meetings",
+      label: "Recorded Meetings",
       color: "text-persianGreen",
       content: meetings,
       component: Recorded_Meetings,
@@ -107,15 +107,26 @@ const Info: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <div className="relative w-full h-[300px]"> {/* Set the desired height */}
-        <Image
-          src="/event3.jpeg"
-          alt="Our Vision"
-          layout="fill"
-          objectFit="cover" // or 'contain' based on your need
-        />
+      <div className="flex flex-col items-center w-full">
+        {/* <div className='grid grid-cols-3 w-full'>
+          <h1 className='flex items-center justify-center py-1.5 text-white bg-midnightGreen'>News</h1>
+          <h1 className='flex items-center justify-center py-1.5 text-white bg-persianGreen'>Documentaries</h1>
+          <h1 className='flex items-center justify-center py-1.5 text-white bg-lightGreen'>Recorded Meetings</h1>
+        </div> */}
+        <div className='flex justify-center w-full bg-persianGreen'>
+          <h1 className="pt-3 pb-3 text-5xl text-white">Get Informed!</h1>
+        </div>
+        <div className="relative w-full h-[250px]"> {/* Set the desired height */}
+          <Image
+            src="/event3.jpeg"
+            alt="Our Vision"
+            layout="fill"
+            objectFit="cover" // or 'contain' based on your need
+          />
+        </div>
       </div>
-      <Tabs aria-label="Dynamic tabs" items={tabs} radius='sm' size='lg' color='success'>
+      
+      <Tabs aria-label="Dynamic tabs" items={tabs} radius='full' size='lg' color='success'>
         {(item) => (
           <Tab key={item.id} title={item.label}>
             <div className={`grid grid-cols-1 gap-1 md:${item.grid} w-full items-center`}>
