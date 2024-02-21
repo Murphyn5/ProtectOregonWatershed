@@ -19,11 +19,11 @@ interface Meetings {
 }
 
 interface MeetingsProps {
-  meeting: Meetings;
+  element: Meetings;
 }
 
 
-const Recorded_Meetings: React.FC<MeetingsProps> = ({ meeting }) => {
+const Recorded_Meetings: React.FC<MeetingsProps> = ({ element }) => {
 
   const [currentImg, setCurrentImg] = useState(0)
   const [carouselSize, setCarouselSize] = useState({ width: 0, height: 0 })
@@ -90,7 +90,7 @@ const Recorded_Meetings: React.FC<MeetingsProps> = ({ meeting }) => {
               }}
               className='w-full h-full absolute flex transition-all duration-300'>
               {/* Map through meeting.images to render images */}
-              {meeting.images.map((image, index) => (
+              {element.images.map((image, index) => (
                 <div key={index} className='relative shrink-0 w-full h-full'>
                   <Image
                     className='pointer-events-none'
@@ -114,19 +114,19 @@ const Recorded_Meetings: React.FC<MeetingsProps> = ({ meeting }) => {
               <LeftArrowIcon />
             </button>
             <button
-              disabled={currentImg === meeting.images.length - 1}
+              disabled={currentImg === element.images.length - 1}
               onClick={() => setCurrentImg(prev => prev + 1)}
-              className={`border px-4 py-2 font-bold ${currentImg === meeting.images.length - 1 && 'opacity-50'}`}
+              className={`border px-4 py-2 font-bold ${currentImg === element.images.length - 1 && 'opacity-50'}`}
             >
               <RightArrowIcon />
             </button>
           </div>
         </div>
-        <Link isExternal href={meeting.link} key={meeting.id}>
+        <Link isExternal href={element.link} key={element.id}>
           <div className="bg-white shadow-md rounded-lg max-w-1/2 flex flex-col justify-center items-center">
-            <div className="text-3xl font-bold">{meeting.title}</div>
+            <div className="text-3xl font-bold">{element.title}</div>
             <p className="text-gray-700 text-lg p-10">
-              {meeting.description}
+              {element.description}
             </p>
           </div>
         </Link>
