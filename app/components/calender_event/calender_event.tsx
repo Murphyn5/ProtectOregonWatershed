@@ -18,7 +18,7 @@ interface Event {
   title: string;
   description: string;
   link: string;
-  images: string;
+  images: Array<{ url: string }>;
   // Add other properties as needed
 }
 
@@ -43,7 +43,7 @@ const Calender_event: React.FC<CalenderEventProps> = ({ event }) => {
               <Image
                 alt="pictures"
                 className="object-cover w-full h-full rounded-md"
-                src={event.images[0]}
+                src={event.images[0].url}
                 width={300}
                 height={300}
               />

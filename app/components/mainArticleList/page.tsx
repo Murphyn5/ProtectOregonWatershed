@@ -28,20 +28,39 @@ const MainArticleList: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
+  const formatDateTime = (inputString: string): string => {
+    const dateTime = new Date(inputString);
+
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+
+    const formattedDateTime = dateTime.toLocaleDateString('en-US', options);
+    return formattedDateTime;
+  };
+
+
   const fetchArticles = async () => {
     try {
       const res = await fetch('/api/articles/');
       if (!res.ok) {
         throw new Error('Failed to fetch articles');
-      };
-      const { articles } = await res.json();
-      setArticleList(Object.values(articles));
+      }
+
+      let { articles } = await res.json();
+
+      // Save only the first three articles to state
+      setArticleList((Object.values(articles).slice(0, 3) as Article[]));
     } catch (err) {
       setError('Error fetching articles');
     } finally {
       setIsLoading(false);
-    };
+    }
   };
+
+
 
   useEffect(() => {
     fetchArticles();
@@ -64,13 +83,13 @@ const MainArticleList: React.FC = () => {
             >
               <CardBody className="py-2 flex h-max">
                 <div className="flex flex-col items-start gap-1 h-max">
-                  {/* <Image
+                  <Image
                     alt="pictures"
                     className="object-cover rounded-xl"
                     src={article.images[0].url}
                     width={270}
                     height={270}
-                  /> */}
+                  />
                   <h1 className="flex flex-wrap text-2xl text-splash1 font-extrabold">
                     {article.title}
                   </h1>
@@ -78,7 +97,7 @@ const MainArticleList: React.FC = () => {
                     {article.source}
                   </h2>
                   <h2 className="text-md font-bold">
-                    {article.date_posted}
+                    {formatDateTime(article.date_posted)}
                   </h2>
                 </div>
               </CardBody>

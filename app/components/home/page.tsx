@@ -2,8 +2,6 @@ import MainArticleList from "../mainArticleList/page";
 import MainEventsList from "../mainEventsList/page";
 import Link from "next/link";
 import Image from "next/image";
-import { homeNews } from "./homeData";
-import News_card from "../news_card/news_card";
 
 interface News {
   id: number;
@@ -35,9 +33,9 @@ const Main = () => {
           alt="main image"
           className="w-full h-full object-cover m-0 p-0"
         />
-        <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
+        {/* <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1>
+        </h1> */}
         {/* <div className="absolute div-background bottom-12 w-20 z-10">
           <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
             Stop The Spray!
@@ -98,6 +96,9 @@ const Main = () => {
       <section className={`${newsSection} bg-background py-5`}>
         <h2 className={`${subHeading}`}>Upcoming Events</h2>
         <MainEventsList />
+      </section>
+      <section className={`${defaultSection} bg-background`}>
+        <Link href='/events' className={`${learnMore} ${whiteParagraph}`}>Learn More</Link>
       </section>
 
       <section className="flex w-full bg-background">
