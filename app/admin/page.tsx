@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Button, Tabs, Tab, Card, CardBody } from '@nextui-org/react';
-import EventForm from '../components/form/eventsForm';
+import EventForm from '../dashboard/components/EventCreateForm';
 import ArticleForm from '../components/form/articleForm';
 import LoginForm from '../components/form/loginForm';
 

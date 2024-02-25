@@ -86,7 +86,7 @@ const MainArticleList: React.FC = () => {
                   <Image
                     alt="pictures"
                     className="object-cover rounded-xl"
-                    src={article.images[0].url}
+                    src={article.images[0]?.url}
                     width={270}
                     height={270}
                   />

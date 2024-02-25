@@ -26,19 +26,6 @@ const Events: React.FC = () => {
     fetch('/api/community_events')
       .then((res) => res.json())
       .then((res) => {
-
-        // community_events : {
-        // 1
-        // :
-        // {created_at: '2024-01-31T18:53:41.213864', dates: '', days: 'Saturdays', description: 'Our chance to make some noise and build community support!', id: 1, …}
-        // 2
-        // :
-        // {created_at: '2024-01-31T18:53:41.213953', dates: 'Feb. 6, 2024', days: 'Tuesday', description: 'These workshops are designed for communities to co…artners. In-person and virtual options available.', id: 2, …}
-        // 3
-        // :
-        // {created_at: '2024-01-31T18:53:41.213978', dates: 'Feb 28, Mar 6, Mar 13,
-        // }
-
         setEvents(res.community_events);
         setLoading(false);
         console.log('res:', res);

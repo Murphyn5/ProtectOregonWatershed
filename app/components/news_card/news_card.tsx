@@ -51,7 +51,7 @@ const News_card: React.FC<NewsProps> = ({ element }) => {
           <Image
             alt="pictures"
             className="object-cover rounded-xl w-full max-h-[200px] md:w-[50%]"
-            src={element.images[0].url}
+            src={element.images[0]?.url}
             width={270}
             height={270}
           />

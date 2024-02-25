@@ -38,7 +38,7 @@ const MainEventsList: React.FC = () => {
         throw new Error('Failed to fetch events');
       };
       const { community_events } = await res.json();
-      setEvents(Object.values(community_events));
+      setEvents((Object.values(events).slice(0, 3) as Event[]));
     } catch (err) {
       setError('Error fetching events');
     } finally {
@@ -73,7 +73,7 @@ const MainEventsList: React.FC = () => {
                   <img
                     alt="pictures"
                     className="object-cover rounded-xl w-full h-48 object-cover object-top"
-                    src={event.images[0].url}
+                    src={event.images[0]?.url}
                   // width={300}
                   // height={270}
                   />
