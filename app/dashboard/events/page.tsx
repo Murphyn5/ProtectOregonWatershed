@@ -1,10 +1,10 @@
 'use client';
 // dashboard/resources/page.tsx
 import React, { useState, useEffect } from 'react';
-import EventEditForm from '../components/EventEditForm';
-import EventImageForm from '../components/EventImageForm';
-import EventCreateForm from '../components/EventCreateForm';
-import ManageEventImages from '../components/ManageEventImages';
+import EventEditForm from './EventEditForm';
+import EventImageForm from './EventImageForm';
+import EventCreateForm from './EventCreateForm';
+import ManageEventImages from './ManageEventImages';
 
 export interface Event {
   id: number;

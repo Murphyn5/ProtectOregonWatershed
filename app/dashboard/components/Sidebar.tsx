@@ -7,13 +7,7 @@ import { useRouter } from 'next/navigation';
 
 const links = [
   { href: '/dashboard', label: 'Home Page' },
-  { href: '/dashboard/about', label: 'About Page' },
-  { href: '/dashboard/contact', label: 'Contact Page' },
-  { href: '/dashboard/services', label: 'Services Page' },
   { href: '/dashboard/events', label: 'Manage Events' },
-  { href: '/dashboard/faq', label: 'FAQ Page' },
-  { href: '/dashboard/testimonials', label: 'Testimonials Page' },
-  { href: '/dashboard/profile', label: 'Change Email / Password' },
 ];
 
 const Sidebar: React.FC = () => {

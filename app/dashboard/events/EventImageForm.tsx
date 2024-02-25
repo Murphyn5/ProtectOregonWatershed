@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Event } from '../events/page';
+import { Event } from './page';
 
 interface EventImageFormProps {
     initialResource?: {
