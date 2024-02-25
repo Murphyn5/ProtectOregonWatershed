@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import EventEditForm from '../components/EventEditForm';
 import EventImageForm from '../components/EventImageForm';
 import EventCreateForm from '../components/EventCreateForm';
+import ManageEventImages from '../components/ManageEventImages';
 
 export interface Event {
   id: number;
@@ -25,10 +26,10 @@ const DashboardResourcesPage = () => {
   const [isLoading, setLoading] = useState(true);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
   const [deleteItemId, setDeleteItemId] = useState<number | null>(null);
-  const [eventImageId, setEventImageId] = useState<number | null>(null);
+  const [eventId, setEventId] = useState<number | null>(null);
   const [showImageForm, setShowImageForm] = useState(false)
   const [showEventCreateForm, setShowEventCreateForm] = useState(false)
-  const [showManageImagesPage, setshowManageImagesPage] = useState(false)
+  const [showManageImagesPage, setShowManageImagesPage] = useState(false)
 
   const openDeleteModal = (id: number) => {
     setDeleteItemId(id);
@@ -63,11 +64,12 @@ const DashboardResourcesPage = () => {
 
   const handleAddImage = (event: Event) => {
     setShowImageForm(true)
-    setEventImageId(event.id)
+    setEventId(event.id)
   };
 
   const handleManageImages = (id: number) => {
-    setshowManageImagesPage(true)
+    setShowManageImagesPage(true)
+    setEventId(id)
   };
 
   const handleDelete = async () => {
@@ -103,12 +105,11 @@ const DashboardResourcesPage = () => {
 
   if (isLoading) return <p>Loading...</p>;
   if (!events) return <p>No profile data</p>;
-
   return (
     <div className="flex h-screen bg-gray-100 p-10">
       <div className="max-w-3xl w-full space-y-8">
         <h1 className="text-4xl font-bold mb-6">Events</h1>
-        {showManageImagesPage ? (<></>) : (showEventCreateForm ? (<EventCreateForm setShowEventCreateForm={setShowEventCreateForm} />) : (showImageForm ? (<EventImageForm eventImageId={eventImageId} setLoading={setLoading} setEvents={setEvents} setShowImageForm={setShowImageForm}></EventImageForm>) : (editingResource ? (
+        {showManageImagesPage ? (<ManageEventImages setShowManageImagesPage={setShowManageImagesPage} eventId={eventId}/>) : (showEventCreateForm ? (<EventCreateForm setShowEventCreateForm={setShowEventCreateForm} />) : (showImageForm ? (<EventImageForm eventId={eventId} setLoading={setLoading} setEvents={setEvents} setShowImageForm={setShowImageForm}></EventImageForm>) : (editingResource ? (
           <EventEditForm initialResource={editingResource} setLoading={setLoading} setEvents={setEvents} setEditingResource={setEditingResource} />
         ) : (
           <>

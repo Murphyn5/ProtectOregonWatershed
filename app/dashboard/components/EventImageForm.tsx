@@ -11,12 +11,12 @@ interface EventImageFormProps {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
     setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
     setShowImageForm: React.Dispatch<React.SetStateAction<boolean>>;
-    eventImageId: number | null;
+    eventId: number | null;
 }
 
-const EventImageForm: React.FC<EventImageFormProps> = ({ initialResource = { community_event_id: '', url: '', caption: '' }, setLoading, setEvents, setShowImageForm, eventImageId }) => {
+const EventImageForm: React.FC<EventImageFormProps> = ({ initialResource = { community_event_id: '', url: '', caption: '' }, setLoading, setEvents, setShowImageForm, eventId }) => {
     const [resource, setResource] = useState({
-        community_event_id: initialResource?.community_event_id || eventImageId || '',
+        community_event_id: initialResource?.community_event_id || eventId || '',
         url: initialResource?.url || '',
         caption: initialResource?.caption || '',
     });
@@ -38,7 +38,7 @@ const EventImageForm: React.FC<EventImageFormProps> = ({ initialResource = { com
         });
 
         try {
-            const response = await fetch(`/api/community_events/${eventImageId}/images`, {
+            const response = await fetch(`/api/community_events/${eventId}/images`, {
                 method: "POST",
                 body: formDataToSend,
             });
