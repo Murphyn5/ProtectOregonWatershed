@@ -2,8 +2,6 @@ import MainArticleList from "../mainArticleList/page";
 import MainEventsList from "../mainEventsList/page";
 import Link from "next/link";
 import Image from "next/image";
-import { homeNews } from "./homeData";
-import News_card from "../news_card/news_card";
 
 interface News {
   id: number;
@@ -24,7 +22,7 @@ const Main = () => {
   const callText = 'text-white text-5xl font-bold mt-8 mb-1 text-center';
   const callText2 = 'text-white text-md mb-8 text-center';
   const callSplash = 'flex w-full justify-center';
-  const readMore = 'bg-splash1 px-5 py-2 mb-5';
+  const learnMore = 'bg-splash1 px-5 py-2 mb-5 rounded hover:bg-opacity-80 transition ease-in-out';
   const newsSection = 'flex flex-col w-full items-center';
 
   return (
@@ -35,9 +33,9 @@ const Main = () => {
           alt="main image"
           className="w-full h-full object-cover m-0 p-0"
         />
-        <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
+        {/* <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-6xl md:text-7xl font-bold self-end bottom-12">
           Stop The Spray!
-        </h1> 
+        </h1> */}
         {/* <div className="absolute div-background bottom-12 w-20 z-10">
           <h1 className="absolute w-full flex justify-center text-whiteText text-nowrap text-7xl font-bold self-end bottom-12">
             Stop The Spray!
@@ -47,7 +45,7 @@ const Main = () => {
 
       <section className="grid grid-cols-1 md:grid-cols-3 mb-2">
         <div className="w-full h-50 flex flex-col items-center justify-center bg-persianGreen">
-          <Link href="/action" rel="noopener noreferrer"
+          <Link href="/about" rel="noopener noreferrer"
             target="_blank" >
             <h1 className={callText}>Our Mission</h1>
             <p className={callText2}>Our Goal, Vision & Commitment</p>
@@ -79,7 +77,7 @@ const Main = () => {
           >
             <path d="M8 11a3 3 0 110-6 3 3 0 010 6zm0 1a4 4 0 100-8 4 4 0 000 8zM8 0a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 018 0zm0 13a.5.5 0 01.5.5v2a.5.5 0 01-1 0v-2A.5.5 0 018 13zm8-5a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2a.5.5 0 01.5.5zM3 8a.5.5 0 01-.5.5h-2a.5.5 0 010-1h2A.5.5 0 013 8zm10.657-5.657a.5.5 0 010 .707l-1.414 1.415a.5.5 0 11-.707-.708l1.414-1.414a.5.5 0 01.707 0zm-9.193 9.193a.5.5 0 010 .707L3.05 13.657a.5.5 0 01-.707-.707l1.414-1.414a.5.5 0 01.707 0zm9.193 2.121a.5.5 0 01-.707 0l-1.414-1.414a.5.5 0 01.707-.707l1.414 1.414a.5.5 0 010 .707zM4.464 4.465a.5.5 0 01-.707 0L2.343 3.05a.5.5 0 11.707-.707l1.414 1.414a.5.5 0 010 .708z" />
           </svg> */}
-          News</h2>
+          Get Informed!</h2>
         <MainArticleList />
         {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center">
           {Object.values(homeNews).map(article => (
@@ -88,7 +86,7 @@ const Main = () => {
         </div> */}
       </section>
       <section className={`${defaultSection} bg-background`}>
-        <Link href='/articles/' className={`${readMore} ${whiteParagraph}`}>Read More</Link>
+        <Link href='/info' className={`${learnMore} ${whiteParagraph}`}>Learn More</Link>
       </section>
 
       <section className={`${defaultSection} bg-splash3 py-16`}>
@@ -98,6 +96,9 @@ const Main = () => {
       <section className={`${newsSection} bg-background py-5`}>
         <h2 className={`${subHeading}`}>Upcoming Events</h2>
         <MainEventsList />
+      </section>
+      <section className={`${defaultSection} bg-background`}>
+        <Link href='/events' className={`${learnMore} ${whiteParagraph}`}>Learn More</Link>
       </section>
 
       <section className="flex w-full bg-background">

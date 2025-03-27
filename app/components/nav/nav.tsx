@@ -16,7 +16,7 @@ import { ThemeSwitcher } from '../../components/themeSwitcher/themeSwitcher';
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = ["About", "Action", "Articles", "Events"];
+  const menuItems = ["About", "Action", "Info", "Events"];
 
   const closeMenu = () => setIsMenuOpen(false);
 

@@ -9,7 +9,6 @@ export default function SignInPage() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [csrfToken, setCsrfToken] = useState("");
   const router = useRouter()
 
   // useEffect(() => {
@@ -27,7 +26,6 @@ export default function SignInPage() {
     setIsLoading(true);
     setErrors([])
     const formData = new FormData();
-    formData.append("csrf_token", csrfToken);
     formData.append("email", email);
     formData.append("password", password);
 
@@ -39,7 +37,7 @@ export default function SignInPage() {
 
       if (response.ok) {
         const data = await response.json();
-        router.push('/admin')
+        router.push('/dashboard')
         console.log(data);
 
       } else {

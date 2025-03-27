@@ -24,7 +24,11 @@ export default function RootLayout({
       <body>
         <Providers>
           <Nav />
-          <main className="">{children}</main>
+          <main className="">
+            <div className="m-auto container max-w-[1024px]">
+              {children}
+            </div>
+          </main>
           <Footer />
         </Providers>
       </body>

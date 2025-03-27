@@ -1,5 +1,6 @@
 interface ButtonProps {
   text: string;
+  additionalClasses?: string; 
   onClick?: (event?: React.FormEvent) => void; // Make onClick prop accept an optional event argument
 }
 

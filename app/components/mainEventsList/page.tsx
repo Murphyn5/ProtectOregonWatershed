@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Calender_event from '../calender_event/calender_event';
-import { homeEvents } from '../home/homeData';
+
 
 import {
   Button,
@@ -24,7 +24,7 @@ const MainEventsList: React.FC = () => {
     title: string;
     description: string;
     link: string;
-    image: string;
+    images: Array<{ url: string }>;
     // Add other properties as needed
   }
   const [events, setEvents] = useState<Event[]>([]);
@@ -33,14 +33,14 @@ const MainEventsList: React.FC = () => {
 
   const fetchEvents = async () => {
     try {
-      const res = await fetch('/api/articles/');
+      const res = await fetch('/api/community_events/');
       if (!res.ok) {
-        throw new Error('Failed to fetch articles');
+        throw new Error('Failed to fetch events');
       };
-      const { events } = await res.json();
-      setEvents(Object.values(events));
+      const { community_events } = await res.json();
+      setEvents((Object.values(events).slice(0, 3) as Event[]));
     } catch (err) {
-      setError('Error fetching articles');
+      setError('Error fetching events');
     } finally {
       setIsLoading(false);
     };
@@ -58,7 +58,7 @@ const MainEventsList: React.FC = () => {
   // console.log('imgs:', Object.values(events[0])[1]['images'][0]);
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3 w-full items-center p-5 items-stretch">
-      {homeEvents.map(event => (
+      {events.map(event => (
         <Link isExternal href={event.link} key={event.id} className='h-max'>
           <Tooltip
             content="click to explore more about this article"
@@ -73,7 +73,7 @@ const MainEventsList: React.FC = () => {
                   <img
                     alt="pictures"
                     className="object-cover rounded-xl w-full h-48 object-cover object-top"
-                    src={event.image}
+                    src={event.images[0]?.url}
                   // width={300}
                   // height={270}
                   />

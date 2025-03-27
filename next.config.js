@@ -7,7 +7,7 @@ const nextConfig = {
         destination:
           process.env.NODE_ENV === 'development'
             ? 'http://127.0.0.1:5000/api/:path*'
-            : 'https://pow-backend.onrender.com/api/:path*',
+            : 'https://pow-flask.onrender.com/api/:path*',
       },
     ]
   },
